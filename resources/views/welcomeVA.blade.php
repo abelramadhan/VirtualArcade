@@ -13,5 +13,6 @@
         <h1>VIRTUAL<br>ARCADE</h1>
         <h2>COMPETE FOR THE HIGHEST SCORE</h2>
     </div>
-    <a href="./login" class="login_button">LOGIN</a>
+    <a href="./login" class="login_button">LOGIN ></a>
+    <a href="./register" class="reg_link">create account</a>
 </body>

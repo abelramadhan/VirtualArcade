@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcomeVA');
 });
 
-Route::get('/snek', function () {
+Route::get('/login', function () {
     return view('snek');
 });
