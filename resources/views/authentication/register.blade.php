@@ -16,7 +16,10 @@
     </div>
     <div class="box-register">
         <table cellpadding='5px'>
-            <form action="post">
+            <tr>
+                <td>@include('flash-message')</td>
+            </tr>
+            <form action="">
             <tr>
                 <td>USERNAME</td>
             </tr>
