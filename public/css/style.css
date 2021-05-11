@@ -33,6 +33,21 @@ h2 {
     margin: 2px
 }
 
+.title {
+    font-size: 35px;
+    justify-self: center;
+    text-align: center;
+}
+
+.info {
+    font-size: 19.4px;
+    letter-spacing: normal;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
 .login_button {
     text-decoration: none;
     background-color: white;
@@ -49,21 +64,37 @@ h2 {
 }
 
 .box-register{
-    font-family: 'Open Sans';
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
     /* text-align: center; */
-    border: 1px solid;
     padding: 30px;
     border-radius: 3px;
-    
+    border: 1px solid rgb(100, 100, 100);
+    font-weight: bold;
 }
 
-input {
+input[type=text],
+input[type=password] {
     width: 300px;
     height: 20px;
-    border-radius: 3px;
-    padding: 10px;
-    background-color: #1f1f1f;
+    border: none;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    padding: 5px 10px;
+    background-color: #202020;
     color: white;
+    transition: border-bottom .25s ease-in-out;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 1px solid white;
+}
+
+.bottom-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .forminput {
@@ -75,16 +106,22 @@ input {
     padding: 10px;
     font-family: 'Press Start 2P', cursive;
     background-color: white;
+    border-radius: 3px;
+    border: none;
+    padding: 12px 15px;
+    transition: background-color .20s ease-in-out;
 }
 
-.showPass{
-    text-align: center;
-    width: auto;
-    margin: 0 15px 0 0;
-    width: 10px;
-    display: inline;
+.submit-button:hover {
+    background-color: rgb(216, 216, 216);
 }
 
-.uwawa{
-    font-size: 15px;
+.showPass {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: lighter;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
