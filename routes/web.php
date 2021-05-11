@@ -26,17 +26,17 @@ Route::get('/register',[App\Http\Controllers\AuthController::class, 'showRegiste
 Route::post('/register',[App\Http\Controllers\AuthController::class, 'validateForm'])->name('validate.user');
 
 Route::get('/tetris', function () {
-    return view('balok');
+    return view('games.balok');
 });
 
 Route::get('/uler', function () {
-    return view('snek');
+    return view('games.snek');
 });
 
 Route::get('/sudoku', function () {
-    return view('sudoku');
+    return view('games.sudoku');
 });
 
 Route::get('/pacman', function () {
-    return view('pacman');
+    return view('games.pacman');
 });
