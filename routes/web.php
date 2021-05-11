@@ -25,3 +25,18 @@ Route::get('/register',[App\Http\Controllers\AuthController::class, 'showRegiste
 
 Route::post('/register',[App\Http\Controllers\AuthController::class, 'validateForm'])->name('validate.user');
 
+Route::get('/tetris', function () {
+    return view('balok');
+});
+
+Route::get('/uler', function () {
+    return view('snek');
+});
+
+Route::get('/sudoku', function () {
+    return view('sudoku');
+});
+
+Route::get('/pacman', function () {
+    return view('pacman');
+});
