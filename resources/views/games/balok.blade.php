@@ -21,7 +21,6 @@
         <canvas id="next" class="next"></canvas>
         </div>
         <button onclick="play()" class="play-button">Play</button>
-        <button onclick="play()" class="play-button">Play</button>
         <script src="{{ asset('js/balok/board.js') }}"></script>
         <script src="{{ asset('js/balok/constants.js') }}"></script>
         <script src="{{ asset('js/balok/main.js') }}"></script>
