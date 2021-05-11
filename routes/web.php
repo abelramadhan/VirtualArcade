@@ -17,8 +17,6 @@ Route::get('/', function () {
     return view('welcomeVA');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+Route::get('/login', function () {
+    return view('snek');
+});
