@@ -5,15 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,700&display=swap" rel="stylesheet">
     <title>Register</title>
 </head>
 <body display>
+    <div>
+        <h1 class="title">VIRTUAL<br>ARCADE</h1>
+        <h2 class="info">Register an Account</h2>
+    </div>
     <div class="box-register">
         <table cellpadding='5px'>
-            <form action="post">
+            <tr>
+                <td class="flash">@include('flash-message')</td>
+            </tr>
+            <form action="{{ route('validate.user') }}" method='post'>
+            @csrf
             <tr>
                 <td>USERNAME</td>
             </tr>
@@ -27,10 +34,13 @@
                 <td><input type="password" name="password" id="inputPassword"></td>
             </tr>
             <tr>
-                <td style="padding: 0px;"><input class="showPass" type="checkbox" onclick="showPassword()"><span class="uwawa">Show Password<span></td>
-            </tr>
-            <tr>
-                <td align="right"><button class="submit-button" type="submit">REGISTER</button></td>
+                <td class="bottom-row">
+                    <div class="showPass">
+                        <input style="margin: 0px 10px 0px 0px" type="checkbox" onclick="showPassword()">
+                        <h3>Show Password</h3>
+                    </div>
+                    <button class="submit-button" type="submit">REGISTER</button>
+                </td>
             </tr>
             </form>
         </table>
