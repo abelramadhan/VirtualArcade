@@ -24,3 +24,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('authentication.register');
 });
+
+Route::get('/sudoku', function () {
+    return view('sudoku.playsudoku');
+});
