@@ -7,6 +7,7 @@
 @endif
 
 @if ($errors->any())
-    <strong>Data tidak valid.</strong>
+    <strong>Username must be between 5 - 15 character.</strong><br>
+    <strong>Password must be at least 8 character.</strong>
 @endif
 

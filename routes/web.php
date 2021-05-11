@@ -21,7 +21,22 @@ Route::get('/login', function () {
     return view('authentication.login');
 });
 
-Route::get('/register',[App\Http\Controllers\AuthController::class, 'showRegister'])->name('validateForm.Auth');
+Route::get('/register',[App\Http\Controllers\AuthController::class, 'showRegister'])->name('validateForm.user');
 
-Route::post('events/validate',[App\Http\Controllers\EventsController::class, 'validateForm'])->name('validate.event');
+Route::post('/register',[App\Http\Controllers\AuthController::class, 'validateForm'])->name('validate.user');
 
+Route::get('/tetris', function () {
+    return view('games.balok');
+});
+
+Route::get('/uler', function () {
+    return view('games.snek');
+});
+
+Route::get('/sudoku', function () {
+    return view('games.sudoku');
+});
+
+Route::get('/pacman', function () {
+    return view('games.pacman');
+});

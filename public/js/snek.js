@@ -43,7 +43,6 @@ function directionbtn(dirkey) {
     } 
 }
 
-
 function draw() {
    
     ctx.fillStyle = "#1f1f1f";

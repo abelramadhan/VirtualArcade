@@ -17,9 +17,10 @@
     <div class="box-register">
         <table cellpadding='5px'>
             <tr>
-                <td>@include('flash-message')</td>
+                <td class="flash">@include('flash-message')</td>
             </tr>
-            <form action="">
+            <form action="{{ route('validate.user') }}" method='post'>
+            @csrf
             <tr>
                 <td>USERNAME</td>
             </tr>

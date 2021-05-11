@@ -8,22 +8,25 @@ use App\Models\User;
 class AuthController extends Controller
 {
     //
-    public function valideForm(Request $request){
+    public function validateForm(Request $request){
         $request->validate([
-            'username' => 'required|alpha|min:3|max:15',
+            'username' => 'required|string|min:3|max:15',
             'password' => 'required|string|min:8|max:50'
         ]);
-        $users = User::all();
         $occupied = False;
-        foreach($users[0] as $i){
-            if(strcmp($request['username'], $i) == 0){
-                $occupied = True;
-            }
+
+        if (User::where('username', '=', $request['username'])->exists()) {
+            $occupied = True;
         }
+
         if ($occupied){
             return back()->with('occupied', 'Username sudah terpakai');
         } else {
-            return back()->with('success', 'Berhasil registrasi!');
+            User::create([
+                'username' => $request->username,
+                'password'=> $request->password,
+            ]);
+            return redirect('/login');
         }
     }
 
