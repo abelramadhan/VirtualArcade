@@ -11,14 +11,12 @@
 </head>
 <body display>
     <div>
-        <h1 class="title">VIRTUAL<br>ARCADE</h1>
+        <a href="./"><h1 class="title">VIRTUAL<br>ARCADE</h1></a>
         <h2 class="info">Register an Account</h2>
     </div>
-    <div class="box-register">
+    <div class="box-auth">
         <table cellpadding='5px'>
-            <tr>
-                <td class="flash">@include('flash-message')</td>
-            </tr>
+            @include('flash-message')
             <form action="{{ route('validate.user') }}" method='post'>
             @csrf
             <tr>
@@ -45,6 +43,7 @@
             </form>
         </table>
     </div>
+    <a class="link" href="./login">already have an account? click here to login</a>
     
     <script>
         function showPassword() {
