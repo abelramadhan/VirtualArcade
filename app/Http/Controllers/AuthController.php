@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Snek;
+use App\Models\Tetris;
+use App\Models\Sudoku;
 
 class AuthController extends Controller
 {
@@ -26,11 +29,45 @@ class AuthController extends Controller
                 'username' => $request->username,
                 'password'=> $request->password,
             ]);
+
+            Snek::create([
+                'username' => $request->username,
+            ]);
+
+            Sudoku::create([
+                'username' => $request->username,
+            ]);
+
+            Tetris::create([
+                'username' => $request->username,
+            ]);
             return redirect('/login');
         }
     }
 
     public function showRegister(){
         return view('authentication.register');
+    }
+
+    public function logAuth(Request $request){
+        $correctUser = False;
+        $approve = False;
+        if(User::where('username', '=', $request['username'])->exists()){
+            $correctUser = True;
+        }
+
+        if ($correctUser && (User::where('username', '=', $request['username'], 'AND', 'password', '=', $request['password']))){
+            $approve = True;
+        } 
+        
+        if(!$correctUser){
+            return back()->with('falseUser', 'Username tidak terdaftar! Silahkan daftar.');
+        }
+
+        if ($approve) {
+            return redirect('/home');
+        } else {
+            return back()->with('falseAuth', 'Password salah.');
+        }
     }
 }

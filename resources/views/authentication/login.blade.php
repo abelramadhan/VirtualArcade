@@ -17,7 +17,7 @@
     <div class="box-auth">
         <table cellpadding='5px'>
             @include('flash-message')
-            <form action="{{ route('validate.user') }}" method='post'>
+            <form action="{{ route('login.user') }}" method='post'>
             @csrf
             <tr>
                 <td>USERNAME</td>

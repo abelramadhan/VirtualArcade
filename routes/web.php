@@ -21,6 +21,8 @@ Route::get('/login', function () {
     return view('authentication.login');
 });
 
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'logAuth'])->name('login.user');
+
 Route::get('/register',[App\Http\Controllers\AuthController::class, 'showRegister'])->name('validateForm.user');
 
 Route::post('/register',[App\Http\Controllers\AuthController::class, 'validateForm'])->name('validate.user');
