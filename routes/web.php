@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,23 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+Route::get('login', 'LoginController@login')->name('login');
+
+Route::group(['middleware' => ['auth']], function() {
+
+});
+
 Route::get('/', function () {
     return view('welcomeVA');
 });
 
-Route::get('/login', function () {
-    return view('authentication.login');
-});
+Route::get('/login',[App\Http\Controllers\LoginController::class, 'showLogin']);
 
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'logAuth'])->name('login.user');
 
-Route::get('/register',[App\Http\Controllers\AuthController::class, 'showRegister'])->name('validateForm.user');
+Route::get('/register',[App\Http\Controllers\AuthController::class, 'showRegister']);
 
 Route::post('/register',[App\Http\Controllers\AuthController::class, 'validateForm'])->name('validate.user');
 
 Route::get('/home', function () {
     return view('home');
-});
+})->middleware('auth');
 
 Route::get('/tetris', function () {
     return view('games.balok');
