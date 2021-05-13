@@ -1,0 +1,93 @@
+body {
+    padding: 0px 20vw 0px 20vw;
+    background-color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid rgb(173, 173, 173);
+    padding: 5px 20px 0px 20px;
+}
+
+.end {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo {
+    font-size: 25px;
+    margin: 12px 0px 12px 0px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Open Sans';
+    font-size: 10px;
+}
+
+.signed-in {
+    margin: 0px 0px 0px 0px;
+    font-weight: 100;
+    color: white;
+    opacity: 0.8;
+}
+
+.username {
+    font-family: 'Open Sans';
+    margin: 0px 15px 0px 0px;
+    font-weight: bolder;
+    padding: 0px;
+    font-size: 18px;
+}
+
+.profile-icon {
+    width: 31px;
+    opacity: 0.9;
+}
+
+.nav-item {
+    list-style-type: none;
+    display: inline;
+    font-family: 'Open Sans';
+    font-size: medium;
+    justify-self: flex-end;
+    margin: 0px 5px 0px 5px;
+}
+
+.nav {
+    margin: 0px 60px 0px 0px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: white;
+    opacity: 0.8;
+    transition: opacity .2s ease-in-out;
+}
+
+a:hover {
+    opacity: 1;
+}

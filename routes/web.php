@@ -27,6 +27,10 @@ Route::get('/register',[App\Http\Controllers\AuthController::class, 'showRegiste
 
 Route::post('/register',[App\Http\Controllers\AuthController::class, 'validateForm'])->name('validate.user');
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 Route::get('/tetris', function () {
     return view('games.balok');
 });
