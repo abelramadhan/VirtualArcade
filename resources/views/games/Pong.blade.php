@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-   <canvas id="pong" width="900" height="400"></canvas>
+   <canvas id="pong" width="650" height="400"></canvas>
    <script src="pong.js"></script>
 </body>
 </html>

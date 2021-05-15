@@ -50,6 +50,6 @@ Route::get('/sudoku', function () {
     return view('games.sudoku');
 });
 
-Route::get('/pacman', function () {
-    return view('games.pacman');
+Route::get('/Pong', function () {
+    return view('games.Pong');
 });
