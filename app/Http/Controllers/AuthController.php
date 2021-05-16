@@ -41,6 +41,11 @@ class AuthController extends Controller
             Tetris::create([
                 'username' => $request->username,
             ]);
+
+            Pong::create([
+                'username' => $request->username,
+            ]);
+
             return redirect('/login');
         }
     }

@@ -48,12 +48,10 @@
             <p>Move with arrow keys or swipe, fire with the space bar or touch. The invaders get faster and drop
                 more bombs as you complete each level!</p>
             <p><a id="muteLink" href="#" onclick="toggleMute()">mute</a> | 
-                <a href="http://github.com/dwmkerr/spaceinvaders">spaceinvaders on github</a> | 
-                <a href="http://github.com/dwmkerr">more projects</a> | <a href="http://www.dwmkerr.com">dwmkerr.com</a></p>
         </div>
 
-        <script src="js/starfield.js"></script>
-        <script src="js/spaceinvaders.js"></script>
+        <script src="{{ asset('js/spacein/starfield.js') }}"></script>
+        <script src="{{ asset('js/spacein/spacein.js') }}"></script>
         <script>
 
             //  Create the starfield.

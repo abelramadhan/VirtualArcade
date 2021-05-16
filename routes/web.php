@@ -51,3 +51,7 @@ Route::get('/sudoku', function () {
 Route::get('/Pong', function () {
     return view('games.Pong');
 });
+
+Route::get('/spaceinvader', function () {
+    return view('games.spacein');
+});
