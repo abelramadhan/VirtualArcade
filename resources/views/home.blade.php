@@ -12,22 +12,33 @@
 <body>
     <div class="navbar">
         <h2 class="logo">VIRTUAL<br>ARCADE</h2>
-        <div class="end">
-        <div class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="">Games</a></li>
-                <li class="nav-item"><a href="">Leaderboard</a></li>
-                <li class="nav-item"><a href="">News</a></li>
-                <li class="nav-item"><a href="">About Us</a></li>
-            </ul>
+        <div class="nav-list">
+            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('icons/home.svg') }}" alt="home"></a>
+            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('icons/game.svg') }}" alt="home"></a>
+            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('icons/leaderboard.svg') }}" alt="home"></a>
+            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('icons/info.svg') }}" alt="home"></a>
         </div>
         <div class="profile">
-            <div class="user">
+            <div   div class="user">
                 <h3 class="signed-in">signed in as</h3>
                 <h3 class="username">Kemal003</h3>
             </div>
             <img class="profile-icon" src="{{ asset('icons/profile_icon.svg') }}" alt="">
         </div>
+    </div>
+    <div class="home">
+        <div class="hero">
+            <div class="hero-title">
+                <H1>GET THE<br>HIGHEST<br>SCORE</H1>
+                <p>Compete with your friends in playing arcade games
+                    and get the highest score in the leaderboards
+                </p>
+                <div class="buttons">
+                    <h1>PLAY ></h1>
+                    <h2>View Leaderboard</h2>
+                </div>
+            </div>
+            <img class="hero-img" src="{{ asset('icons/akiaki3.png') }}" alt="">
         </div>
     </div>
 </body>
