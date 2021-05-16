@@ -14,19 +14,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Auth::routes();
-
-Route::get('login', 'LoginController@login')->name('login');
-
-Route::group(['middleware' => ['auth']], function() {
-
-});
-
 Route::get('/', function () {
     return view('welcomeVA');
 });
 
-Route::get('/login',[App\Http\Controllers\LoginController::class, 'showLogin']);
+Route::get('/login',[App\Http\Controllers\LoginController::class, 'login']);
 
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'logAuth'])->name('login.user');
 
@@ -36,7 +28,7 @@ Route::post('/register',[App\Http\Controllers\AuthController::class, 'validateFo
 
 Route::get('/home', function () {
     return view('home');
-})->middleware('auth');
+});
 
 Route::get('/tetris', function () {
     return view('games.balok');
