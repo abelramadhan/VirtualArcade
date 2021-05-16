@@ -5,21 +5,13 @@
     <title>Pong Game</title>
     <style>
         body{
-            background-color: dimgray;
-        }
-        #pong{
-            border: 2px solid #FFF;
-            position: absolute;
-            margin :auto;
-            top:0;
-            right:0;
-            left:0;
-            bottom:0;
+            background-color: #1f1f1f;
+        	text-align: center;
         }
     </style>
 </head>
 <body>
-   <canvas id="pong" width="650" height="400"></canvas>
-   <script src="pong.js"></script>
-</body>
+   <canvas id="pong"></canvas>
+   <script src="{{ asset('js/pong/pong.js') }}"></script>
+    </body>
 </html>
