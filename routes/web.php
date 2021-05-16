@@ -14,15 +14,15 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('login', 'LoginController@login')->name('login');
+// Route::get('login', 'LoginController@login')->name('login');
 
-Route::group(['middleware' => ['auth']], function() {
+// Route::group(['middleware' => ['auth']], function() {
 
-});
+// });
 
-Route::get('/', function () {
-    return view('welcomeVA');
-});
+// Route::get('/', function () {
+//     return view('welcomeVA');
+// });
 
 Route::get('/login',[App\Http\Controllers\LoginController::class, 'login']);
 

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>VIRTUAL ARCADE</title>
 </head>
 <body>
@@ -39,6 +40,16 @@
                 </div>
             </div>
             <img class="hero-img" src="{{ asset('icons/akiaki3.png') }}" alt="">
+        </div>
+    </div>
+    <div class="footer">
+        <h3>| VirtualArcade is a project made by some student of Brawijaya University as a final project in Web Programming | 
+            virtualarcade@gmail.com | +62 111234578 |
+        </h3>
+        <div class="socialmedia">
+            <a href="" class="fa fa-instagram"></a>
+            <a href="" class="fa fa-twitter"></a>
+            <a href="" class="fa fa-facebook"></a>
         </div>
     </div>
 </body>
