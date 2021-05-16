@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('login', 'LoginController@login')->name('login');
+
+Route::group(['middleware' => ['auth']], function() {
+
+});
+
 Route::get('/', function () {
     return view('welcomeVA');
 });
@@ -42,6 +48,6 @@ Route::get('/sudoku', function () {
     return view('games.sudoku');
 });
 
-Route::get('/pacman', function () {
-    return view('games.pacman');
+Route::get('/Pong', function () {
+    return view('games.Pong');
 });
