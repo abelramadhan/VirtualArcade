@@ -48,7 +48,7 @@ Route::get('/sudoku', function () {
     return view('games.sudoku');
 });
 
-Route::get('/Pong', function () {
+Route::get('/pong', function () {
     return view('games.Pong');
 });
 

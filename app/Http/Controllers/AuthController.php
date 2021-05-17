@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Snek;
 use App\Models\Tetris;
 use App\Models\Sudoku;
+use App\Models\Pong;
+use App\Models\SpaceInvader;
 
 class AuthController extends Controller
 {
@@ -43,6 +45,10 @@ class AuthController extends Controller
             ]);
 
             Pong::create([
+                'username' => $request->username,
+            ]);
+
+            SpaceInvader::create([
                 'username' => $request->username,
             ]);
 
