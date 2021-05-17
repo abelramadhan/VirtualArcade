@@ -20,9 +20,9 @@ use Illuminate\Support\Facades\Auth;
 
 // });
 
-// Route::get('/', function () {
-//     return view('welcomeVA');
-// });
+Route::get('/', function () {
+    return view('welcomeVA');
+});
 
 Route::get('/login',[App\Http\Controllers\LoginController::class, 'login']);
 

@@ -14,17 +14,17 @@
     <div class="navbar">
         <h2 class="logo">VIRTUAL<br>ARCADE</h2>
         <div class="nav-list">
-            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('icons/home.svg') }}" alt="home"></a>
-            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('icons/game.svg') }}" alt="home"></a>
-            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('icons/leaderboard.svg') }}" alt="home"></a>
-            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('icons/info.svg') }}" alt="home"></a>
+            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('public/icons/home.svg') }}" alt="home"></a>
+            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('public/icons/game.svg') }}" alt="home"></a>
+            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('public/icons/leaderboard.svg') }}" alt="home"></a>
+            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('public/icons/info.svg') }}" alt="home"></a>
         </div>
         <div class="profile">
             <div   div class="user">
                 <h3 class="signed-in">signed in as</h3>
                 <h3 class="username">Kemal003</h3>
             </div>
-            <img class="profile-icon" src="{{ asset('icons/profile_icon.svg') }}" alt="">
+            <img class="profile-icon" src="{{ asset('public/icons/profile_icon.svg') }}" alt="">
         </div>
     </div>
     <div class="home">
