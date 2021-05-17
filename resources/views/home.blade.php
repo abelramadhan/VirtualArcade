@@ -35,8 +35,8 @@
                     and get the highest score in the leaderboards
                 </p>
                 <div class="buttons">
-                    <h1>PLAY ></h1>
-                    <h2>View Leaderboard</h2>
+                    <a href=""><h1>PLAY ></h1></a>
+                    <a href=""><h2>View Leaderboard</h2></a>
                 </div>
             </div>
             <img class="hero-img" src="{{ asset('icons/akiaki3.png') }}" alt="">
