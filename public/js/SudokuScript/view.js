@@ -27,7 +27,7 @@ class View{
         for(let i=0;i<size;i++){
             html += `<span class="flex-col keypad__item">${i+1}</span>`
         }
-        html+=`<span class="flex-col keypad__item"><img src="images/trash-o.svg" alt=""></span>`;        
+        html+=`<span class="flex-col keypad__item"><img src="{{ asset('images/SudokuImage/trash-o.svg') }}" alt=""></span>`;        
         keypad.innerHTML = html;        
     }
 

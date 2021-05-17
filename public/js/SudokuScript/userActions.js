@@ -38,14 +38,16 @@ function initActions() {
         }
     }
 
+    let score = 0;
     function submitHandler(event) {
         event.stopPropagation();
         let validater = new Validate(board.board, boardSize)
         let isValid = validater.runTests();
         if (isValid) {
-            alert("You've Solved this. Awesome!!!")
+            score+=100;
+            alert("Selamat kamu berhasil menyelesaikan game. Score kamu sekarang "+ score)
         } else {
-            alert("That's not correct. Keep trying.")
+            alert("Coba lagi ya, masih salah!")
         }
     }
 

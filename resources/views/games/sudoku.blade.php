@@ -14,7 +14,7 @@
 
     <div id="main__container">
         <div id="header__controls" class="flex-row">
-            <span id="header__menu"><img src="{{ asset('images/SudokuImage/3dots.svg') }}" id="dotMenuSpan" ></span>
+            <span id="header__menu"><img src="{{ asset('images/SudokuImage/option.png') }}" id="dotMenuSpan"></span>
             <Span id="header__header">SUDOKU</Span>
             <span id="header__submit"><span>Submit</span ></span>
         </div>
