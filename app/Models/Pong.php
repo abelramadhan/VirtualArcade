@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Pong extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'username',
+    ];
 }
