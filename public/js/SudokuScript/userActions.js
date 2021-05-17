@@ -44,8 +44,9 @@ function initActions() {
         let validater = new Validate(board.board, boardSize)
         let isValid = validater.runTests();
         if (isValid) {
+            alert("Selamat kamu berhasil menyelesaikan game. Score bertambah 100 poin!")
             score+=100;
-            alert("Selamat kamu berhasil menyelesaikan game. Score kamu sekarang "+ score)
+            alert("Score kamu sekarang "+ score + " poin!")
         } else {
             alert("Coba lagi ya, masih salah!")
         }
