@@ -222,17 +222,9 @@ function WelcomeState() {
 
 WelcomeState.prototype.enter = function(game) {
 
-    // Create and load the sounds.
-    game.sounds = new Sounds();
-    game.sounds.init();
-    game.sounds.loadSound('shoot', 'spacein/sounds/shoot.wav');
-    game.sounds.loadSound('bang', 'spacein/sounds/bang.wav');
-    game.sounds.loadSound('explosion', 'spacein/sounds/explosion.wav');
-    game.sounds.loadSound('shoot', 'spacein/sounds/invaderkilled.wav');
 };
 
 WelcomeState.prototype.update = function (game, dt) {
-
 
 };
 
@@ -611,8 +603,6 @@ PlayState.prototype.fireRocket = function() {
         this.rockets.push(new Rocket(this.ship.x, this.ship.y - 12, this.config.rocketVelocity));
         this.lastRocketTime = (new Date()).valueOf();
 
-        //  Play the 'shoot' sound.
-        game.sounds.playSound('shoot');
     }
 };
 
@@ -643,9 +633,7 @@ PauseState.prototype.draw = function(game, dt, ctx) {
 
 /*  
     Level Intro State
-
-    The Level Intro state shows a 'Level X' message and
-    a countdown for the level.
+    The Level Intro state shows a 'Level X' message and a countdown for the level.
 */
 function LevelIntroState(level) {
     this.level = level;
@@ -688,7 +676,6 @@ LevelIntroState.prototype.draw = function(game, dt, ctx) {
     return;
 };
 
-
 /*
  
   Ship
@@ -717,9 +704,6 @@ function Rocket(x, y, velocity) {
 
 /*
     Bomb
-
-    Dropped by invaders, they've got position, velocity.
-
 */
 function Bomb(x, y, velocity) {
     this.x = x;
@@ -728,9 +712,7 @@ function Bomb(x, y, velocity) {
 }
  
 /*
-    Invader 
-
-    Invader's have position, type, rank/file and that's about it. 
+    Invader  
 */
 
 function Invader(x, y, rank, file, type) {
@@ -745,12 +727,6 @@ function Invader(x, y, rank, file, type) {
 
 /*
     Game State
-
-    A Game State is simply an update and draw proc.
-    When a game is in the state, the update and draw procs are
-    called, with a dt value (dt is delta time, i.e. the number)
-    of seconds to update or draw).
-
 */
 function GameState(updateProc, drawProc, keyDown, keyUp, enter, leave) {
     this.updateProc = updateProc;
@@ -760,69 +736,3 @@ function GameState(updateProc, drawProc, keyDown, keyUp, enter, leave) {
     this.enter = enter;
     this.leave = leave;
 }
-
-/*
-
-    Sounds
-
-    The sounds class is used to asynchronously load sounds and allow
-    them to be played.
-
-*/
-function Sounds() {
-
-    //  The audio context.
-    this.audioContext = null;
-
-    //  The actual set of loaded sounds.
-    this.sounds = {};
-}
-
-Sounds.prototype.init = function() {
-
-    //  Create the audio context, paying attention to webkit browsers.
-    context = window.AudioContext || window.webkitAudioContext;
-    this.audioContext = new context();
-    this.mute = false;
-};
-
-Sounds.prototype.loadSound = function(name, url) {
-
-    //  Reference to ourselves for closures.
-    var self = this;
-
-    //  Create an entry in the sounds object.
-    this.sounds[name] = null;
-
-    //  Create an asynchronous request for the sound.
-    var req = new XMLHttpRequest();
-    req.open('GET', url, true);
-    req.responseType = 'arraybuffer';
-    req.onload = function() {
-        self.audioContext.decodeAudioData(req.response, function(buffer) {
-            self.sounds[name] = {buffer: buffer};
-        });
-    };
-    try {
-      req.send();
-    } catch(e) {
-      console.log("An exception occured getting sound the sound " + name + " this might be " +
-         "because the page is running from the file system, not a webserver.");
-      console.log(e);
-    }
-};
-
-Sounds.prototype.playSound = function(name) {
-
-    //  If we've not got the sound, don't bother playing it.
-    if(this.sounds[name] === undefined || this.sounds[name] === null || this.mute === true) {
-        return;
-    }
-
-    //  Create a sound source, set the buffer, connect to the speakers and
-    //  play the sound.
-    var source = this.audioContext.createBufferSource();
-    source.buffer = this.sounds[name].buffer;
-    source.connect(this.audioContext.destination);
-    source.start(0);
-};
