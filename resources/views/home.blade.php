@@ -14,10 +14,10 @@
     <div class="navbar">
         <h2 class="logo">VIRTUAL<br>ARCADE</h2>
         <div class="nav-list">
-            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('images/icons/home.svg') }}" alt="home"></a>
-            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('images/icons/game.svg') }}" alt="home"></a>
-            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('images/icons/leaderboard.svg') }}" alt="home"></a>
-            <a class="nav-item" href=""><img class="menu-icon" src="{{ asset('images/icons/info.svg') }}" alt="home"></a>
+            <span class="nav-item" onclick="currentSlide(1)"><img class="menu-icon" src="{{ asset('images/icons/home.svg') }}" alt="home"></span>
+            <span class="nav-item" onclick="currentSlide(2)"><img class="menu-icon" src="{{ asset('images/icons/game.svg') }}" alt="home"></span>
+            <span class="nav-item" onclick="currentSlide(3)"><img class="menu-icon" src="{{ asset('images/icons/leaderboard.svg') }}" alt="home"></span>
+            <span class="nav-item" onclick="currentSlide(4)"><img class="menu-icon" src="{{ asset('images/icons/info.svg') }}" alt="home"></span>
         </div>
         <div class="profile">
             <div   div class="user">
@@ -27,7 +27,9 @@
             <img class="profile-icon" src="{{ asset('images/icons/profile_icon.svg') }}" alt="">
         </div>
     </div>
-    <div class="home">
+    <div class="home-container">
+
+        <div class="slide fade">
         <div class="hero">
             <div class="hero-title">
                 <H1>GET THE<br>HIGHEST<br>SCORE</H1>
@@ -41,6 +43,41 @@
             </div>
             <img class="hero-img" src="{{ asset('images/akiaki3.png') }}" alt="">
         </div>
+        </div>
+
+        <div class="slide fade">
+            <div class="games">
+                <h1>GAMES</h1>
+                <div class="game-container">
+                    <h2>SNEK</h2>
+                </div>
+                <div class="game-container">
+                    <h2>TETRIS</h2>
+                </div>
+                <div class="game-container">
+                    <h2>PONG</h2>
+                </div>
+                <div class="game-container">
+                    <h2>SPACE INVADER</h2>
+                </div>
+                <div class="game-container">
+                    <h2>SUDOKU</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide fade">
+            <div class="leaderboard">
+                <h1>LEADERBOARDS</h1>
+            </div>
+        </div>
+
+        <div class="slide fade">
+            <div class="info">
+                <h1>INFO</h1>
+            </div>
+        </div>
+
     </div>
     <div class="footer">
         <h3>| VirtualArcade is a project made by some student of Brawijaya University as a final project in Web Programming | 
@@ -52,5 +89,31 @@
             <a href="" class="fa fa-facebook"></a>
         </div>
     </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("slide");
+          var icon = document.getElementsByClassName("nav-item");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < icon.length; i++) {
+              icon[i].className = icon[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          icon[slideIndex-1].className += " active";
+        }
+    </script>
+
 </body>
 </html>
