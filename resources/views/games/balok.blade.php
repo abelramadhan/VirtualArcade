@@ -3,13 +3,17 @@
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balok</title>
+    <title>TETRIS</title>
     <link rel="stylesheet" href="{{ asset('css/balok.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/game.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
     <div>
-        <h1>BALOK</h1>
+        <h1>TETRIS</h1>
+    </div>
+    <div id="gameover" >
+        <h1>GAME OVER</h1>
     </div>
     <div class="grid">
     <canvas id="board" class="game-board"></canvas>

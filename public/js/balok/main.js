@@ -77,6 +77,8 @@ function resetGame() {
   account.score = 0;
   account.lines = 0;
   account.level = 0;
+  var gameover = document.getElementById("gameover");
+  gameover.style.display = "none";
   board.reset();
   time = { start: 0, elapsed: 0, level: LEVEL[account.level] };
 }
@@ -111,11 +113,8 @@ function animate(now = 0) {
 
 function gameOver() {
   cancelAnimationFrame(requestId);
-  ctx.fillStyle = 'black';
-  ctx.fillRect(1, 3, 8, 1.2);
-  ctx.font = '1px Arial';
-  ctx.fillStyle = 'white';
-  ctx.fillText('GAME OVER', 1.8, 4);
+  var gameover = document.getElementById("gameover");
+  gameover.style.display = "block";
 }
 
 function pause() {
