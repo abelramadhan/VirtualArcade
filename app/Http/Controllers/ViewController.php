@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ViewController extends Controller
 {
     //
     public function home(){
-        return view('home');
+        $username = Auth::id();
+        return view('home')
+            ->with('username', $username);
     }
 
     public function tetris(){

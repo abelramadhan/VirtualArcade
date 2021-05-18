@@ -12,6 +12,8 @@ class User extends Model implements Authenticatable
     use HasFactory;
     use AuthAuthenticatable;
 
+    public $incrementing = False;
+
     protected $fillable = [
         'username',
         'password',

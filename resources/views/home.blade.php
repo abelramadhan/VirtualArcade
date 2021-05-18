@@ -1,3 +1,7 @@
+<?php
+use Illuminate\Support\Facades\Auth;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +26,7 @@
         <div class="profile">
             <div   div class="user">
                 <h3 class="signed-in">signed in as</h3>
-                <h3 class="username">Kemal003</h3>
+                <h3 class="username">{{ $username }}</h3>
             </div>
             <img class="profile-icon" src="{{ asset('images/icons/profile_icon.svg') }}" alt="">
         </div>
