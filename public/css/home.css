@@ -97,6 +97,9 @@ body {
 
 .slide {
     display: none;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .active {
@@ -145,6 +148,8 @@ body {
     border: 1px solid white;
     color: #1f1f1f;
     margin: 0px 20px 0px 0px;
+    opacity: 0.9;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .buttons h2 {
@@ -152,6 +157,45 @@ body {
     margin: 0;
     padding: 15px 20px 15px 20px;
     border: 1px solid white;
+    opacity: 0.9;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.buttons h1:hover, .buttons h2:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.games {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.games a {
+    width: 65%;
+}
+
+.games h1 {
+    font-size: 50px;
+}
+
+.game-container {
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    margin: 12px 0px 12px 0px;
+    font-size: small;
+    padding: 20px 0px 20px 0px;
+    transition: .1s ease-in-out;
+}
+
+.game-container:hover {
+    background-color: white;
+    color: #1f1f1f;
 }
 
 a {

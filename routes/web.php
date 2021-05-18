@@ -40,7 +40,7 @@ Route::get('/tetris', function () {
     return view('games.balok');
 });
 
-Route::get('/uler', function () {
+Route::get('/snek', function () {
     return view('games.snek');
 });
 
