@@ -23,13 +23,14 @@ class AuthController extends Controller
         if (User::where('username', '=', $request['username'])->exists()) {
             $occupied = True;
         }
+        $request['password'] = bcrypt($request['password']);
 
         if ($occupied){
             return back()->with('occupied', 'Username sudah terpakai');
         } else {
             User::create([
                 'username' => $request->username,
-                'password'=> $request->password,
+                'password'=> $request['password'],
             ]);
 
             Snek::create([

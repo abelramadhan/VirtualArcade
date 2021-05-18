@@ -12,19 +12,21 @@ class LoginController extends Controller
         return view('authentication.login');
     }
 
-    public function cekLogin(Request $request){
+    public function authenticate(Request $request){
         $request->validate([
             'username' => 'required|string',
             'password' => 'required',
         ]);
 
-        $data = $request->only('username', 'password');
+        $credentials = $request->only('username', 'password');
 
-        if (Auth::attempt($data)){
-            return redirect('/home');
-        } else {
-            return back()->with('wrong', 'Maaf, data yang anda masukkan salah.');
+        if (Auth::attempt($credentials)){
+            $request->session()->regenerate();
+            
+            return redirect('home');
         }
+        
+        return back()->with('wrong', 'Maaf, data yang anda masukkan salah.');
     }
 
     public function logout(){

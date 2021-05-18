@@ -16,42 +16,62 @@ use Illuminate\Support\Facades\Auth;
 
 // Route::get('login', 'LoginController@login')->name('login');
 
-// Route::group(['middleware' => ['auth']], function() {
-
-// });
-
-Route::get('/', function () {
-    return view('welcomeVA');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/home', function () {
+        return view('home');
+    })->middleware('auth');
+    
+    Route::get('/tetris', function () {
+        return view('games.balok');
+    });
+    
+    Route::get('/snek', function () {
+        return view('games.snek');
+    });
+    
+    Route::get('/sudoku', function () {
+        return view('games.sudoku');
+    });
+    
+    Route::get('/pong', function () {
+        return view('games.Pong');
+    });
+    
+    Route::get('/spaceinvader', function () {
+        return view('games.spacein');
+    });
 });
 
-Route::get('/login',[App\Http\Controllers\LoginController::class, 'login']);
+Route::get('/login',[App\Http\Controllers\LoginController::class, 'login'])->name('login');
 
-Route::post('/login', [App\Http\Controllers\AuthController::class, 'logAuth'])->name('login.user');
+Route::post('/login', [App\Http\Controllers\LoginController::class, 'authenticate'])->name('login.user');
 
 Route::get('/register',[App\Http\Controllers\AuthController::class, 'showRegister']);
 
 Route::post('/register',[App\Http\Controllers\AuthController::class, 'validateForm'])->name('validate.user');
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// })->middleware('auth');
 
-Route::get('/tetris', function () {
-    return view('games.balok');
-});
+// Route::get('/tetris', function () {
+//     return view('games.balok');
+// });
 
-Route::get('/snek', function () {
-    return view('games.snek');
-});
+// Route::get('/snek', function () {
+//     return view('games.snek');
+// });
 
-Route::get('/sudoku', function () {
-    return view('games.sudoku');
-});
+// Route::get('/sudoku', function () {
+//     return view('games.sudoku');
+// });
 
-Route::get('/pong', function () {
-    return view('games.Pong');
-});
+// Route::get('/pong', function () {
+//     return view('games.Pong');
+// });
 
-Route::get('/spaceinvader', function () {
-    return view('games.spacein');
-});
+// Route::get('/spaceinvader', function () {
+//     return view('games.spacein');
+// });
+
+Route::get('/logout',[App\Http\Controllers\LoginController::class, 'logout']);
