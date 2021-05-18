@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -14,64 +15,21 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('login', 'LoginController@login')->name('login');
-
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/home', function () {
-        return view('home');
-    })->middleware('auth');
-    
-    Route::get('/tetris', function () {
-        return view('games.balok');
-    });
-    
-    Route::get('/snek', function () {
-        return view('games.snek');
-    });
-    
-    Route::get('/sudoku', function () {
-        return view('games.sudoku');
-    });
-    
-    Route::get('/pong', function () {
-        return view('games.Pong');
-    });
-    
-    Route::get('/spaceinvader', function () {
-        return view('games.spacein');
-    });
+    Route::get('/home',[ViewController::class, 'home'])->name('home');
+    Route::get('/tetris',[ViewController::class, 'tetris'])->name('tetris');
+    Route::get('/sudoku',[ViewController::class, 'sudoku'])->name('sudoku');
+    Route::get('/pong',[ViewController::class, 'pong'])->name('pong');
+    Route::get('/spaceinvader',[ViewController::class, 'spaceinvader'])->name('spaceinvader');
+    Route::get('/snek',[ViewController::class, 'snek'])->name('snek');
 });
 
-Route::get('/login',[App\Http\Controllers\LoginController::class, 'login'])->name('login');
+Route::get('/login',[LoginController::class, 'login'])->name('login');
 
-Route::post('/login', [App\Http\Controllers\LoginController::class, 'authenticate'])->name('login.user');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.user');
 
-Route::get('/register',[App\Http\Controllers\AuthController::class, 'showRegister']);
+Route::get('/register',[AuthController::class, 'showRegister']);
 
-Route::post('/register',[App\Http\Controllers\AuthController::class, 'validateForm'])->name('validate.user');
+Route::post('/register',[AuthController::class, 'validateForm'])->name('validate.user');
 
-// Route::get('/home', function () {
-//     return view('home');
-// })->middleware('auth');
-
-// Route::get('/tetris', function () {
-//     return view('games.balok');
-// });
-
-// Route::get('/snek', function () {
-//     return view('games.snek');
-// });
-
-// Route::get('/sudoku', function () {
-//     return view('games.sudoku');
-// });
-
-// Route::get('/pong', function () {
-//     return view('games.Pong');
-// });
-
-// Route::get('/spaceinvader', function () {
-//     return view('games.spacein');
-// });
-
-Route::get('/logout',[App\Http\Controllers\LoginController::class, 'logout']);
+Route::get('/logout',[LoginController::class, 'logout']);
