@@ -25,6 +25,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/snek',[ViewController::class, 'snek'])->name('snek');
 });
 
+Route::get('/', function(){
+    return view('welcomeVA');
+});
+
 Route::get('/login',[LoginController::class, 'login'])->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.user');
