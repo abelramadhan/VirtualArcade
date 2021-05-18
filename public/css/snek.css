@@ -1,14 +1,4 @@
-body {
-    background-color: #1f1f1f;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Press Start 2P', cursive;
-    color: white;
-    width: 100%;
-    overflow: hidden;
-}
+
 
 #canvas {
     border: 1px solid white;
