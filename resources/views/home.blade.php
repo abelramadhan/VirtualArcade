@@ -37,8 +37,8 @@
                     and get the highest score in the leaderboards
                 </p>
                 <div class="buttons">
-                    <a href=""><h1>PLAY ></h1></a>
-                    <a href=""><h2>View Leaderboard</h2></a>
+                    <h1 onclick="currentSlide(2)">PLAY ></h1>
+                    <h2 onclick="currentSlide(3)">View Leaderboard</h2>
                 </div>
             </div>
             <img class="hero-img" src="{{ asset('images/akiaki3.png') }}" alt="">
@@ -48,21 +48,21 @@
         <div class="slide fade">
             <div class="games">
                 <h1>GAMES</h1>
-                <div class="game-container">
+                <a href="./snek"><div class="game-container">
                     <h2>SNEK</h2>
-                </div>
-                <div class="game-container">
+                </div></a>
+                <a href="./tetris"><div class="game-container">
                     <h2>TETRIS</h2>
-                </div>
-                <div class="game-container">
+                </div></a>
+                <a href="./pong"><div class="game-container">
                     <h2>PONG</h2>
-                </div>
-                <div class="game-container">
-                    <h2>SPACE INVADER</h2>
-                </div>
-                <div class="game-container">
+                </div></a>
+                <a href="./spaceinvader"><div class="game-container">
+                    <h2>SPACE INVADERS</h2>
+                </div></a>
+                <a href="./sudoku"><div class="game-container">
                     <h2>SUDOKU</h2>
-                </div>
+                </div></a>
             </div>
         </div>
 
@@ -110,7 +110,7 @@
           for (i = 0; i < icon.length; i++) {
               icon[i].className = icon[i].className.replace(" active", "");
           }
-          slides[slideIndex-1].style.display = "block";  
+          slides[slideIndex-1].style.display = "flex";  
           icon[slideIndex-1].className += " active";
         }
     </script>
