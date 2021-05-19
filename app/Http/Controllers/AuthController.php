@@ -9,6 +9,7 @@ use App\Models\Tetris;
 use App\Models\Sudoku;
 use App\Models\Pong;
 use App\Models\SpaceInvader;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -19,6 +20,7 @@ class AuthController extends Controller
             'password' => 'required|string|min:8|max:50'
         ]);
         $occupied = False;
+        $credentials = $request->only('username', 'password');
 
         if (User::where('username', '=', $request['username'])->exists()) {
             $occupied = True;
@@ -52,8 +54,11 @@ class AuthController extends Controller
             SpaceInvader::create([
                 'username' => $request->username,
             ]);
-
-            return redirect('/login');
+            
+            Auth::attempt($credentials);
+            $request->session()->regenerate();
+            
+            return redirect('home');
         }
     }
 
