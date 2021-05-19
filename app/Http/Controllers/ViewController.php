@@ -15,22 +15,22 @@ class ViewController extends Controller
     }
 
     public function tetris(){
-        return view('game.tetris');
+        return view('games.tetris');
     }
     
     public function sudoku(){
-        return view('game.sudoku');
+        return view('games.sudoku');
     }
 
     public function spaceInvader(){
-        return view('game.spaceinvader');
+        return view('games.spaceinvader');
     }
 
     public function snek(){
-        return view('game.snek');
+        return view('games.snek');
     }
 
     public function pong(){
-        return view('game.pong');
+        return view('games.pong');
     }
 }
