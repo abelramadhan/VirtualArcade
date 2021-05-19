@@ -37,19 +37,62 @@ function initActions() {
             board.board[x][y] = this.textContent == "" ? 0 : parseInt(this.textContent)
         }
     }
-
+    //Scoring after sumbit and refresh to the new game
+    let point = 0;
     let score = 0;
     function submitHandler(event) {
         event.stopPropagation();
         let validater = new Validate(board.board, boardSize)
         let isValid = validater.runTests();
         if (isValid) {
-            alert("Selamat kamu berhasil menyelesaikan game. Score bertambah 100 poin!")
-            score+=100;
+            upgradePoint()
+            alert("Selamat kamu berhasil menyelesaikan game dengan level "+user__level+" Score bertambah "+ point +" poin!")
+            score = score+point
             alert("Score kamu sekarang "+ score + " poin!")
+            upgradeLevel()
+            startHandler()
         } else {
             alert("Coba lagi ya, masih salah!")
         }
+    }
+
+    function upgradePoint(){
+        if(boardSize = 4){
+            if (score >= 1000 && score < 3000){
+                point = 120
+            }else if(score >= 3000 && score < 5500){
+                point = 150
+            }else{
+                point = 100
+            }
+        }else{
+            if (score >= 1000 && score < 3000){
+                point = 150
+            }else if(score >= 3000 && score < 5500){
+                point = 200
+            }else{
+                point = 120
+            }
+        }        
+    }
+    function upgradeLevel(){
+        if(boardSize = 4){
+            if (score >= 1500 && score < 3000){
+                user__level = [level, 'Maybe']
+            }else if(score >= 3000 && score < 4500){
+                user__level = [level, 'Evil']
+            }else{
+                user__level = [level, 'Easy']
+            }
+        }else{
+            if (score >= 1500 && score < 3000){
+                user__level = [level, 'Maybe']
+            }else if(score >= 3000 && score < 4500){
+                user__level = [level, 'Evil']
+            }else{
+                user__level = [level, 'Easy']
+            }
+        }        
     }
 
     function dotMenuHandler(e) {
