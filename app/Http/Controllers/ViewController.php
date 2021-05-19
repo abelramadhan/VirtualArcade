@@ -23,7 +23,7 @@ class ViewController extends Controller
     }
 
     public function spaceInvader(){
-        return view('games.spaceinvader');
+        return view('games.spacein');
     }
 
     public function snek(){
