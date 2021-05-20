@@ -24,7 +24,7 @@ class ViewController extends Controller
     }
 
     public function tetris(){
-        return view('games.tetris');
+        return view('games.balok');
     }
     
     public function sudoku(){
