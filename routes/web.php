@@ -18,6 +18,7 @@ use App\Http\Controllers\AuthController;
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/home',[ViewController::class, 'home'])->name('home');
+    Route::get('/home/{menu}',[ViewController::class, 'homeMenu'])->name('home');
     Route::get('/tetris',[ViewController::class, 'tetris'])->name('tetris');
     Route::get('/sudoku',[ViewController::class, 'sudoku'])->name('sudoku');
     Route::get('/pong',[ViewController::class, 'pong'])->name('pong');

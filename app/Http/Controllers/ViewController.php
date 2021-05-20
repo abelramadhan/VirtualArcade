@@ -10,8 +10,17 @@ class ViewController extends Controller
     //
     public function home(){
         $username = Auth::id();
+        $menu = 1;
         return view('home')
-            ->with('username', $username);
+            ->with('username', $username)
+            ->with('menu', $menu);
+    }
+
+    public function homeMenu($menu){
+        $username = Auth::id();
+        return view('home')
+            ->with('username', $username)
+            ->with('menu', $menu);
     }
 
     public function tetris(){

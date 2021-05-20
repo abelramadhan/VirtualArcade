@@ -28,7 +28,16 @@ use Illuminate\Support\Facades\Auth;
                 <h3 class="signed-in">signed in as</h3>
                 <h3 class="username">{{ $username }}</h3>
             </div>
-            <img class="profile-icon" src="{{ asset('images/icons/profile_icon.svg') }}" alt="">
+            <div class="logout">
+                <img onclick="show()" class="logout-icon" src="{{ asset('images/icons/logout.svg') }}">
+                <div id="dropdown" class="logout-dropdown">
+                    <h3>Log out of this account?</h3>
+                    <div>
+                        <a href="./logout" id="logout-btn">Logout</a>
+                        <a id="cancel-btn">cancel</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="home-container">
@@ -95,7 +104,8 @@ use Illuminate\Support\Facades\Auth;
     </div>
 
     <script>
-        var slideIndex = 1;
+        var menu = {{ $menu }};
+        var slideIndex = menu;
         showSlides(slideIndex);
         
         function currentSlide(n) {
@@ -116,6 +126,23 @@ use Illuminate\Support\Facades\Auth;
           }
           slides[slideIndex-1].style.display = "flex";  
           icon[slideIndex-1].className += " active";
+        }
+
+        function show() {
+            document.getElementById("dropdown").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.logout-icon')) {
+                var dropdowns = document.getElementsByClassName("logout-dropdown");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
         }
     </script>
 
