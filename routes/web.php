@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/pong',[ViewController::class, 'pong'])->name('pong');
     Route::get('/spaceinvader',[ViewController::class, 'spaceinvader'])->name('spaceinvader');
     Route::get('/snek',[ViewController::class, 'snek'])->name('snek');
+    Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
 });
 
 Route::get('/', function(){
@@ -37,5 +38,3 @@ Route::post('/login', [LoginController::class, 'authenticate'])->name('login.use
 Route::get('/register',[AuthController::class, 'showRegister']);
 
 Route::post('/register',[AuthController::class, 'validateForm'])->name('validate.user');
-
-Route::get('/logout',[LoginController::class, 'logout']);
