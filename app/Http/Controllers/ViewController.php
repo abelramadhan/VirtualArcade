@@ -16,6 +16,22 @@ class ViewController extends Controller
             ->with('menu', $menu);
     }
 
+    public function games(){
+        $username = Auth::id();
+        $menu = 2;
+        return view('home')
+            ->with('username', $username)
+            ->with('menu', $menu);
+    }
+
+    public function leaderboard(){
+        $username = Auth::id();
+        $menu = 3;
+        return view('home')
+            ->with('username', $username)
+            ->with('menu', $menu);
+    }
+
     public function homeMenu($menu){
         $username = Auth::id();
         return view('home')
