@@ -81,7 +81,26 @@ use Illuminate\Support\Facades\Auth;
 
         <div class="slide fade">
             <div class="leaderboard">
-                <h1>LEADERBOARDS</h1>
+                <div class="leaderboard-title">
+                    <h1>LEADERBOARDS</h1>
+                    <h3>Average</h3>
+                </div>
+                <div class="leaderboard-select">
+                    <form method="get" action="get_leaderboard">
+                        <select id="game-lead" name="game-lead">
+                            <option value="average">Average</option>
+                            <option value="snek">Snek</option>
+                            <option value="tetris">Tetris</option>
+                            <option value="pong">Pong</option>
+                            <option value="space-invader">Space Invader</option>
+                            <option value="sudoku">Sudoku</option>
+                          </select>
+                    </form>
+                    <input type="submit" value="go">
+                </div>
+                <div class="leaderboard-container">
+
+                </div>
             </div>
         </div>
 
@@ -104,6 +123,7 @@ use Illuminate\Support\Facades\Auth;
     </div>
 
     <script>
+        // Navigation
         var menu = {{ $menu }};
         var slideIndex = menu;
         showSlides(slideIndex);
@@ -132,6 +152,7 @@ use Illuminate\Support\Facades\Auth;
             document.getElementById("dropdown").classList.toggle("show");
         }
 
+        // Logout
         window.onclick = function(event) {
             if (!event.target.matches('.logout-icon')) {
                 var dropdowns = document.getElementsByClassName("logout-dropdown");
