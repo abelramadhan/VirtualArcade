@@ -25,6 +25,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/spaceinvader',[ViewController::class, 'spaceinvader'])->name('spaceinvader');
     Route::get('/snek',[ViewController::class, 'snek'])->name('snek');
     Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
+    Route::get('/leaderboard',[ViewController::class, 'leaderboard'])->name('leaderboard');
+    Route::get('/games',[ViewController::class, 'games'])->name('games');
 });
 
 Route::get('/', function(){
