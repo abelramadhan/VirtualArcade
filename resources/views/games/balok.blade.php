@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
-    <div>
+    <div class="judul-game">
         <h1>TETRIS</h1>
     </div>
     <div id="gameover" >
