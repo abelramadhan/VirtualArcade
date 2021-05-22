@@ -44,13 +44,13 @@ body {
   
 .paddle_1 {
     top: calc(7.5vh + 55px);
-    left: calc(5vw + 30px);
+    left: calc(2vw + 30px);
     background-color: #ffffff;
 }
   
 .paddle_2 {
     top: calc(85vh + 7.5vh - 100px - 55px);
-    right: calc(5vw + 30px);
+    right: calc(2vw + 30px);
     background-color: #ffffff;
 }
   

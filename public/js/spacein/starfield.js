@@ -37,14 +37,6 @@ Starfield.prototype.initialise = function(div) {
 
 Starfield.prototype.start = function() {
 
-	//	Create the stars.
-	var stars = [];
-	for(var i=0; i<this.stars; i++) {
-		stars[i] = new Star(Math.random()*this.width, Math.random()*this.height, Math.random()*3+1,
-		 (Math.random()*(this.maxVelocity - this.minVelocity))+this.minVelocity);
-	}
-	this.stars = stars;
-
 	var self = this;
 	//	Start the timer.
 	this.intervalId = setInterval(function() {
@@ -77,15 +69,9 @@ Starfield.prototype.draw = function() {
 	var ctx = this.canvas.getContext("2d");
 
 	//	Draw the background.
- 	ctx.fillStyle = '#000000';
+ 	ctx.fillStyle = '#1f1f1f';
 	ctx.fillRect(0, 0, this.width, this.height);
 
-	//	Draw stars.
-	ctx.fillStyle = '#ffffff';
-	for(var i=0; i<this.stars.length;i++) {
-		var star = this.stars[i];
-		ctx.fillRect(star.x, star.y, star.size, star.size);
-	}
 };
 
 function Star(x, y, size, velocity) {
