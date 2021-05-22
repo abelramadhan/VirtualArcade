@@ -266,6 +266,54 @@ a:hover {
     opacity: 1;
 }
 
+.leaderboard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.leaderboard-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.leaderboard-title h3{
+    margin-top: 0px;
+}
+
+.leaderboard-select {
+    position: relative;
+    left: 215px;
+}
+
+.leaderboard-container table{
+    padding: 15px;
+    width: 100%;
+    height: 58vh;
+    display: inline-block;
+    overflow: scroll;
+}
+
+.leaderboard-container table::-webkit-scrollbar {
+    display: none;
+}
+
+.header-row td{
+    border-bottom: 1px solid white;
+}
+
+td {
+    padding: 13px 30px;
+}
+
+tr .highscore {
+    float: right;
+}
+
 .footer {
     width: 100%;
     display: flex;

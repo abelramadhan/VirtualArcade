@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 </head>
 <body>
     <div class="navbar">
-        <h2 class="logo">VIRTUAL<br>ARCADE</h2>
+        <a href="/home"><h2 class="logo">VIRTUAL<br>ARCADE</h2></a>
         <div class="nav-list">
             <span class="nav-item" onclick="currentSlide(1)"><img class="menu-icon" src="{{ asset('images/icons/home.svg') }}" alt="home"></span>
             <span class="nav-item" onclick="currentSlide(2)"><img class="menu-icon" src="{{ asset('images/icons/game.svg') }}" alt="home"></span>
@@ -33,7 +33,7 @@ use Illuminate\Support\Facades\Auth;
                 <div id="dropdown" class="logout-dropdown">
                     <h3>Log out of this account?</h3>
                     <div>
-                        <a href="./logout" id="logout-btn">Logout</a>
+                        <a href="/logout" id="logout-btn">Logout</a>
                         <a id="cancel-btn">cancel</a>
                     </div>
                 </div>
@@ -83,23 +83,35 @@ use Illuminate\Support\Facades\Auth;
             <div class="leaderboard">
                 <div class="leaderboard-title">
                     <h1>LEADERBOARDS</h1>
-                    <h3>Average</h3>
+                    <h3>{{ $game }}</h3>
                 </div>
                 <div class="leaderboard-select">
-                    <form method="get" action="get_leaderboard">
-                        <select id="game-lead" name="game-lead">
-                            <option value="average">Average</option>
-                            <option value="snek">Snek</option>
-                            <option value="tetris">Tetris</option>
-                            <option value="pong">Pong</option>
-                            <option value="space-invader">Space Invader</option>
-                            <option value="sudoku">Sudoku</option>
-                          </select>
+                    <form method="get" action="{{ route('get_leaderboard') }}">
+                        <select id="game-lead" name="game-lead" onchange="this.form.submit()">
+                            <option selected hidden>select game</option>
+                            <option value="sneks">snek</option>
+                            <option value="tetris">tetris</option>
+                            <option value="pongs">pong</option>
+                            <option value="space_invaders">space invader</option>
+                            <option value="sudokus">sudoku</option>
+                        </select>
                     </form>
-                    <input type="submit" value="go">
                 </div>
                 <div class="leaderboard-container">
-
+                    <table>
+                        <tr class="header-row">
+                            <td>#</td>
+                            <td>username</td>
+                            <td>highscore</td>
+                        </tr>
+                        @foreach ($leaderboard as $row)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $row->username }}</td>
+                            <td class="highscore">{{ $row->highscore }}</td>
+                        </tr>
+                        @endforeach
+                    </table>
                 </div>
             </div>
         </div>
@@ -148,11 +160,12 @@ use Illuminate\Support\Facades\Auth;
           icon[slideIndex-1].className += " active";
         }
 
+
+         // Logout
         function show() {
             document.getElementById("dropdown").classList.toggle("show");
         }
 
-        // Logout
         window.onclick = function(event) {
             if (!event.target.matches('.logout-icon')) {
                 var dropdowns = document.getElementsByClassName("logout-dropdown");

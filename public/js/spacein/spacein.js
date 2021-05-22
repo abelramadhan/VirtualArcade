@@ -44,9 +44,6 @@ function Game() {
     this.pressedKeys = {};
     this.gameCanvas =  null;
 
-    //  All sounds.
-    this.sounds = null;
-
     //  The previous x position, used for touch.
     this.previousX = 0;
 }
@@ -109,19 +106,6 @@ Game.prototype.currentState = function() {
     return this.stateStack.length > 0 ? this.stateStack[this.stateStack.length - 1] : null;
 };
 
-//  Mutes or unmutes the game.
-Game.prototype.mute = function(mute) {
-
-    //  If we've been told to mute, mute.
-    if(mute === true) {
-        this.sounds.mute = true;
-    } else if (mute === false) {
-        this.sounds.mute = false;
-    } else {
-        // Toggle mute instead...
-        this.sounds.mute = this.sounds.mute ? false : true;
-    }
-};
 
 //  The main loop.
 function GameLoop(game) {
@@ -293,7 +277,7 @@ function PlayState(config, level) {
     this.level = level;
 
     //  Game state.
-    this.invaderCurrentVelocity =  10;
+    this.invaderCurrentVelocity =  8
     this.invaderCurrentDropDistance =  0;
     this.invadersAreDropping =  false;
     this.lastRocketTime = null;
@@ -311,7 +295,7 @@ PlayState.prototype.enter = function(game) {
     this.ship = new Ship(game.width / 2, game.gameBounds.bottom);
 
     //  Setup initial state.
-    this.invaderCurrentVelocity =  10;
+    this.invaderCurrentVelocity =  8;
     this.invaderCurrentDropDistance =  0;
     this.invadersAreDropping =  false;
 
@@ -345,10 +329,6 @@ PlayState.prototype.enter = function(game) {
 
 PlayState.prototype.update = function(game, dt) {
     
-    //  If the left or right arrow keys are pressed, move
-    //  the ship. Check this on ticks rather than via a keydown
-    //  event for smooth movement, otherwise the ship would move
-    //  more like a text editor caret.
     if(game.pressedKeys[KEY_LEFT]) {
         this.ship.x -= this.shipSpeed * dt;
     }
@@ -460,7 +440,6 @@ PlayState.prototype.update = function(game, dt) {
         }
         if(bang) {
             this.invaders.splice(i--, 1);
-            game.sounds.playSound('bang');
         }
     }
 
@@ -468,10 +447,7 @@ PlayState.prototype.update = function(game, dt) {
     var frontRankInvaders = {};
     for(var i=0; i<this.invaders.length; i++) {
         var invader = this.invaders[i];
-        //  If we have no invader for game file, or the invader
-        //  for game file is futher behind, set the front
-        //  rank invader to game one.
-        if(!frontRankInvaders[invader.file] || frontRankInvaders[invader.file].rank < invader.rank) {
+       if(!frontRankInvaders[invader.file] || frontRankInvaders[invader.file].rank < invader.rank) {
             frontRankInvaders[invader.file] = invader;
         }
     }
@@ -543,14 +519,14 @@ PlayState.prototype.draw = function(game, dt, ctx) {
     }
 
     //  Draw bombs.
-    ctx.fillStyle = '#ff5555';
+    ctx.fillStyle = '#ffffff';
     for(var i=0; i<this.bombs.length; i++) {
         var bomb = this.bombs[i];
         ctx.fillRect(bomb.x - 2, bomb.y - 2, 4, 4);
     }
 
     //  Draw rockets.
-    ctx.fillStyle = '#ff0000';
+    ctx.fillStyle = '#ffffff';
     for(var i=0; i<this.rockets.length; i++) {
         var rocket = this.rockets[i];
         ctx.fillRect(rocket.x, rocket.y - 2, 1, 4);
