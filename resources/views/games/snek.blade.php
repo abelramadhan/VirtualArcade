@@ -13,6 +13,10 @@
         <h1>SNEK</h1>
         <div id="score">0</div>
     </div>
+    <form id="senderForm" method="post" action=" {{ route('submit') }} ">
+        @csrf
+        <input id="scoreSend" type="hidden" name="score" value=" ">
+    </form>
     <canvas id="canvas" width="400px" height="400px"></canvas>
     <button id="restartbtn" onclick="location.reload()">RESTART</button>
     <script src="{{ asset('js/snek.js') }}"></script>
