@@ -316,7 +316,7 @@ html body #main__container #keypad .keypad__item {
 
 html body #main__container #keypad .keypad__item:hover {
   border: 1px solid black;
-  background-color: #a4b0be;
+  background-color: white;
   font-weight: 600;
 }
 
@@ -367,7 +367,7 @@ html body #home #selection__size .options {
 
 html body #home #selection__size .options svg:hover {
   cursor: pointer;
-  color: #a4b0be;
+  color: white;
 }
 
 
@@ -381,7 +381,8 @@ html body #home #selection__level .options span {
 }
 
 html body #home #selection__level .options span:hover {
-  color: white;
+  background-color: white;
+  color: #1f1f1f;
 }
 
 html body #home #selection__level .options span:active {
@@ -404,7 +405,7 @@ html body #home #start {
 }
 
 html body #home #start:hover {
-  background-color: #a4b0be;
+  background-color: white;
 }
 
 html body #home #start:active {

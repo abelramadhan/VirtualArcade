@@ -4,6 +4,7 @@
         <title>Space Invaders</title>
         <link rel="stylesheet" type="text/css" href="css/core.css">
         <link rel="stylesheet" type="text/css" href="css/typeography.css">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <style>
     
             /* Styling needed for a fullscreen canvas and no scrollbars. */
@@ -39,11 +40,14 @@
                 margin-left: auto;
                 margin-right: auto;
                 color: #ffffff;
+                font-family: "Courier New";
+                font-size: 15px;
             }
         </style>
     </head>
     <body>
         <div id="starfield"></div>
+        <br></br>
         <div id="gamecontainer">
         <canvas id="gameCanvas"></canvas>
         </div>

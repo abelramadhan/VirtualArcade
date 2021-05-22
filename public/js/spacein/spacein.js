@@ -217,12 +217,12 @@ WelcomeState.prototype.draw = function(game, dt, ctx) {
     //  Clear the background.
     ctx.clearRect(0, 0, game.width, game.height);
 
-    ctx.font="30px Arial";
+    ctx.font="30px Courier New";
     ctx.fillStyle = '#ffffff';
     ctx.textBaseline="middle"; 
     ctx.textAlign="center"; 
     ctx.fillText("Space Invaders", game.width / 2, game.height/2 - 40); 
-    ctx.font="16px Arial";
+    ctx.font="16px Courier New";
 
     ctx.fillText("Press 'Space' or touch to start.", game.width / 2, game.height/2); 
 };
@@ -250,14 +250,14 @@ GameOverState.prototype.draw = function(game, dt, ctx) {
     //  Clear the background.
     ctx.clearRect(0, 0, game.width, game.height);
 
-    ctx.font="30px Arial";
+    ctx.font="30px Courier New";
     ctx.fillStyle = '#ffffff';
     ctx.textBaseline="center"; 
     ctx.textAlign="center"; 
     ctx.fillText("Game Over!", game.width / 2, game.height/2 - 40); 
-    ctx.font="16px Arial";
+    ctx.font="16px Courier New";
     ctx.fillText("You scored " + game.score + " and got to level " + game.level, game.width / 2, game.height/2);
-    ctx.font="16px Arial";
+    ctx.font="16px Courier New";
     ctx.fillText("Press 'Space' to play again.", game.width / 2, game.height/2 + 40);   
 };
 
@@ -534,7 +534,7 @@ PlayState.prototype.draw = function(game, dt, ctx) {
 
     //  Draw info.
     var textYpos = game.gameBounds.bottom + ((game.height - game.gameBounds.bottom) / 2) + 14/2;
-    ctx.font="14px Arial";
+    ctx.font="14px Courier New";
     ctx.fillStyle = '#ffffff';
     var info = "Lives: " + game.lives;
     ctx.textAlign = "left";
@@ -599,7 +599,7 @@ PauseState.prototype.draw = function(game, dt, ctx) {
     //  Clear the background.
     ctx.clearRect(0, 0, game.width, game.height);
 
-    ctx.font="14px Arial";
+    ctx.font="14px Courier New";
     ctx.fillStyle = '#ffffff';
     ctx.textBaseline="middle";
     ctx.textAlign="center";
@@ -642,12 +642,12 @@ LevelIntroState.prototype.draw = function(game, dt, ctx) {
     //  Clear the background.
     ctx.clearRect(0, 0, game.width, game.height);
 
-    ctx.font="36px Arial";
+    ctx.font="36px Courier New";
     ctx.fillStyle = '#ffffff';
     ctx.textBaseline="middle"; 
     ctx.textAlign="center"; 
     ctx.fillText("Level " + this.level, game.width / 2, game.height/2);
-    ctx.font="24px Arial";
+    ctx.font="24px Courier New";
     ctx.fillText("Ready in " + this.countdownMessage, game.width / 2, game.height/2 + 36);      
     return;
 };
