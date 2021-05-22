@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\GameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +25,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/spaceinvader',[ViewController::class, 'spaceinvader'])->name('spaceinvader');
     Route::get('/snek',[ViewController::class, 'snek'])->name('snek');
     Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
-    // Route::get('leaderboard/logout',[LoginController::class, 'logout'])->name('logout');
+    //Route::get('leaderboard/logout',[LoginController::class, 'logout'])->name('logout');
     Route::get('/leaderboard',[ViewController::class, 'leaderboard'])->name('get_leaderboard');
     Route::get('/games',[ViewController::class, 'games'])->name('games');
 });
@@ -42,5 +41,3 @@ Route::post('/login', [LoginController::class, 'authenticate'])->name('login.use
 Route::get('/register',[AuthController::class, 'showRegister']);
 
 Route::post('/register',[AuthController::class, 'validateForm'])->name('validate.user');
-
-Route::post('/tetris', [GameController::class, 'submitScore'])->name('submit');
