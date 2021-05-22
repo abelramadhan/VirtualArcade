@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ViewController extends Controller
 {
@@ -11,9 +12,13 @@ class ViewController extends Controller
     public function home(){
         $username = Auth::id();
         $menu = 1;
+        $leaderboard = DB::table('users')->select('username', 'highscoreAV AS highscore')->orderBy('highscoreAV', 'desc')->get();
+        $game = 'average';
         return view('home')
             ->with('username', $username)
-            ->with('menu', $menu);
+            ->with('menu', $menu)
+            ->with('game', $game)
+            ->with('leaderboard', $leaderboard);
     }
 
     public function games(){
@@ -24,12 +29,17 @@ class ViewController extends Controller
             ->with('menu', $menu);
     }
 
-    public function leaderboard(){
+    public function leaderboard(Request $request){
         $username = Auth::id();
         $menu = 3;
+        $game = $request->only('game-lead');
+        $game = $game['game-lead'];
+        $leaderboard = DB::table($game)->orderBy('highscore', 'desc')->get();
         return view('home')
             ->with('username', $username)
-            ->with('menu', $menu);
+            ->with('menu', $menu)
+            ->with('game', $game)
+            ->with('leaderboard', $leaderboard);
     }
 
     public function homeMenu($menu){
