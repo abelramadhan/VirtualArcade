@@ -40,22 +40,7 @@ function initActions() {
     //Scoring after sumbit and refresh to the new game
     let point = 0;
     let score = 0;
-    function submitHandler(event) {
-        event.stopPropagation();
-        let validater = new Validate(board.board, boardSize)
-        let isValid = validater.runTests();
-        if (isValid) {
-            upgradePoint()
-            alert("Selamat kamu berhasil menyelesaikan game dengan level "+user__level+" Score bertambah "+ point +" poin!")
-            score = score+point
-            alert("Score kamu sekarang "+ score + " poin!")
-            upgradeLevel()
-            startHandler()
-        } else {
-            alert("Coba lagi ya, masih salah!")
-        }
-    }
-
+    
     function upgradePoint(){
         if(boardSize = 4){
             if (score >= 1000 && score < 3000){
@@ -75,6 +60,7 @@ function initActions() {
             }
         }        
     }
+
     function upgradeLevel(){
         if(boardSize = 4){
             if (score >= 1500 && score < 3000){
@@ -93,6 +79,21 @@ function initActions() {
                 user__level = [level, 'Easy']
             }
         }        
+    }
+    function submitHandler(event) {
+        event.stopPropagation();
+        let validater = new Validate(board.board, boardSize)
+        let isValid = validater.runTests();
+        if (isValid) {
+            upgradePoint()
+            alert("Selamat kamu berhasil menyelesaikan game dengan level "+user__level+" Score bertambah "+ point +" poin!")
+            score = score+point
+            alert("Score kamu sekarang "+ score + " poin!")
+            upgradeLevel()
+            startHandler()
+        } else {
+            alert("Coba lagi ya, masih salah!")
+        }
     }
 
     function dotMenuHandler(e) {
