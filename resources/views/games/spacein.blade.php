@@ -51,6 +51,18 @@
                 font-size: 15px;
                 margin: 25px 0px 0px 0px
             }
+
+            #restart-btn {
+                background-color: white;
+                color: #1f1f1f;
+                font-size: 10px;
+                padding: 12px 20px;
+                position: relative;
+                bottom: 370px;
+                cursor: pointer;
+                display: none;
+                z-index: 1;
+            }
         </style>
     </head>
     <body>
@@ -69,6 +81,9 @@
         <div id="info">
             <p>Move with arrow keys, fire with the space bar. The invaders get faster and drop
                 more bombs as you complete each level!</p>
+        </div>
+        <div onclick="save_restart()">
+            <h1 id="restart-btn">SAVE & RESTART</h1>
         </div>
         <form onsubmit="return false" id="senderForm" method="post" action=" {{ route('submit.spacein') }} ">
             @csrf
