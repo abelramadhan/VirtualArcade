@@ -117,8 +117,33 @@ use Illuminate\Support\Facades\Auth;
         </div>
 
         <div class="slide fade">
-            <div class="info">
-                <h1>INFO</h1>
+            <div class="about">
+                <h1>ABOUT</h1>
+                <p>Virtual Arcade merupakan suatu platform permainan klasik versi online.</p>
+                <p>Dimana terdapat beberapa permainan yang seru untuk dimainkan seperti Snek, Tetris, Space Invanders, dan Sudoku.</p>
+                <p>Selain bermain Anda juga dapat bersaing dengan teman-teman Anda yang lain dan jadi pemain dengan skor tertinggi.</p>
+                <br>
+                <h1>MEET OUR DEVELOPER</h1>
+                <table class="developer">
+                    <tr>
+                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>Kemal</td>
+                        <td>Abel</td>
+                        <td>Sela</td>
+                        <td>Kosa</td>
+                        <td>Endro</td>
+                        <td>Saihan</td>
+                    </tr>
+                </table>
+
+
             </div>
         </div>
 

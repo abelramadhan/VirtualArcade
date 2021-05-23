@@ -318,6 +318,20 @@ tr .highscore {
     float: right;
 }
 
+.about{
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+.developer{
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dev-img{
+    width: 100px;
+}
 .footer {
     width: 100%;
     display: flex;
