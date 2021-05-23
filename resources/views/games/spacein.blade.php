@@ -4,6 +4,7 @@
         <title>Space Invaders</title>
         <link rel="stylesheet" type="text/css" href="css/core.css">
         <link rel="stylesheet" type="text/css" href="css/typeography.css">
+        <link rel="stylesheet" type="text/css" href="css/game.css">
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <style>
     
@@ -46,15 +47,24 @@
         </style>
     </head>
     <body>
+        <div class="back-button">
+            <a href="/games">
+                <h3>< back</h3>
+            </a>
+        </div>
         <div id="starfield"></div>
         <br></br>
         <div id="gamecontainer">
         <canvas id="gameCanvas"></canvas>
         </div>
         <div id="info">
-            <p>Move with arrow keys or swipe, fire with the space bar or touch. The invaders get faster and drop
+            <p>Move with arrow keys, fire with the space bar. The invaders get faster and drop
                 more bombs as you complete each level!</p>
         </div>
+        <form onsubmit="return false" id="senderForm" method="post" action=" {{ route('submit.spacein') }} ">
+            @csrf
+            <input id="scoreSend" type="hidden" name="score" value=" ">
+        </form>
 
         <script src="{{ asset('js/spacein/starfield.js') }}"></script>
         <script src="{{ asset('js/spacein/spacein.js') }}"></script>

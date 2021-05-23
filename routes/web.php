@@ -45,3 +45,4 @@ Route::post('/register',[AuthController::class, 'validateForm'])->name('validate
 
 Route::post('/snek', [GameController::class, 'submitScoreSnek'])->name('submit.snek');
 Route::post('/tetris', [GameController::class, 'submitScoreTetris'])->name('submit.tetris');
+Route::post('/spaceinvader', [GameController::class, 'submitScoreSpacein'])->name('submit.spacein');
