@@ -13,7 +13,7 @@ class ViewController extends Controller
     public function home(){
         $username = Auth::id();
         $menu = 1;
-        $leaderboard = User::select('username', 'highscoreAV AS highscore')->orderBy('highscoreAV', 'desc')->get();
+        $leaderboard = DB::table('users')->select('username', 'highscoreAV AS highscore')->orderBy('highscoreAV', 'desc')->get();
         $game = 'average';
         return view('home')
             ->with('username', $username)
@@ -34,7 +34,7 @@ class ViewController extends Controller
             ->with('leaderboard', $leaderboard);
     }
 
-    public function leaderboard(){
+    public function leaderboardAV(){
         $username = Auth::id();
         $menu = 3;
         $game = 'average';
@@ -46,11 +46,12 @@ class ViewController extends Controller
             ->with('leaderboard', $leaderboard);
     }
 
-    public function info(){
+    public function leaderboard(Request $request){
         $username = Auth::id();
-        $menu = 4;
-        $leaderboard = User::select('username', 'highscoreAV AS highscore')->orderBy('highscoreAV', 'desc')->get();
-        $game = 'average';
+        $menu = 3;
+        $game = $request->only('game-lead');
+        $game = $game['game-lead'];
+        $leaderboard = DB::table($game)->orderBy('highscore', 'desc')->get();
         return view('home')
             ->with('username', $username)
             ->with('menu', $menu)
@@ -72,9 +73,7 @@ class ViewController extends Controller
     }
     
     public function sudoku(){
-        $username = Auth::id();
-        $currentHighscore = DB::table('sudokus')->where('username', $username)->value('highscore');
-        return view('games.sudoku')->with('currentHighscore', $currentHighscore);
+        return view('games.sudoku');
     }
 
     public function spaceInvader(){

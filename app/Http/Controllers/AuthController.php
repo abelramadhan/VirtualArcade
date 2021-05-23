@@ -7,7 +7,6 @@ use App\Models\User;
 use App\Models\Snek;
 use App\Models\Tetris;
 use App\Models\Sudoku;
-use App\Models\Pong;
 use App\Models\SpaceInvader;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,10 +43,6 @@ class AuthController extends Controller
             ]);
 
             Tetris::create([
-                'username' => $request->username,
-            ]);
-
-            Pong::create([
                 'username' => $request->username,
             ]);
 

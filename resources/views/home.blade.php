@@ -88,7 +88,6 @@ use Illuminate\Support\Facades\Auth;
                             <option selected hidden>select game</option>
                             <option value="sneks">snek</option>
                             <option value="tetris">tetris</option>
-                            <option value="pongs">pong</option>
                             <option value="space_invaders">space invader</option>
                             <option value="sudokus">sudoku</option>
                         </select>
@@ -142,7 +141,17 @@ use Illuminate\Support\Facades\Auth;
         showSlides(slideIndex);
         
         function currentSlide(n) {
-          showSlides(slideIndex = n);
+            showSlides(slideIndex = n);
+            var nextURL;
+            switch (n) {
+                case 1: nextURL = '/home'; break;
+                case 2: nextURL = '/games'; break;
+                case 3: nextURL = '/leaderboardAV'; break;
+                case 4: nextURL = '/info'; break;
+            }
+            const nextTitle = 'VIRTUAL ARCADE';
+            const nextState = { additionalInformation: 'Updated' };
+            window.history.pushState(nextState, nextTitle, nextURL);
         }
         
         function showSlides(n) {
