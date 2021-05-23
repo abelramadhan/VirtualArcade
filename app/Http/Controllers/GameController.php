@@ -80,18 +80,4 @@ class GameController extends Controller
         GameController::hitungAverage();
         return redirect()->back();
     }
-
-    public function submitScoreSudoku(Request $request){
-        $username = Auth::id();
-        $score = $request['score'];
-        $currentHighscore = Sudoku::where('username', $username)->value('highscore');
-        if ($score > $currentHighscore){
-            Sudoku::where('username', $username)
-                ->update([
-                    'highscore' => $score
-                ]);
-        }
-        
-        return redirect()->back();
-    }
 }

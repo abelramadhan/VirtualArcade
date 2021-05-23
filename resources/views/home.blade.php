@@ -61,16 +61,16 @@ use Illuminate\Support\Facades\Auth;
         <div class="slide fade">
             <div class="games">
                 <h1>GAMES</h1>
-                <a href="./snek"><div class="game-container">
+                <a href="./games/snek"><div class="game-container">
                     <h2>SNEK</h2>
                 </div></a>
-                <a href="./tetris"><div class="game-container">
+                <a href="./games/tetris"><div class="game-container">
                     <h2>TETRIS</h2>
                 </div></a>
-                <a href="./spaceinvader"><div class="game-container">
+                <a href="./games/spaceinvader"><div class="game-container">
                     <h2>SPACE INVADERS</h2>
                 </div></a>
-                <a href="./sudoku"><div class="game-container">
+                <a href="./games/sudoku"><div class="game-container">
                     <h2>SUDOKU</h2>
                 </div></a>
             </div>
