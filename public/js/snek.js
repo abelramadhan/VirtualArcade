@@ -86,8 +86,6 @@ function draw() {
     if (snekX<0||snekX>19*box||snekY<0||snekY>19*box||collision(newHead,snek)) {
         clearInterval(game);
         document.getElementById("score").innerHTML = "GAME OVER <br> score : "+score;
-        document.getElementById("scoreSend").value = score;
-        document.getElementById("senderForm").submit();
         document.getElementById("restartbtn").style.visibility = "visible";
     } else {
         document.getElementById("score").innerHTML = score;
@@ -107,4 +105,9 @@ function collision(head,array) {
         }
     }
     return false;
+}
+
+function submitScore() {
+    document.getElementById("scoreSend").value = score;
+    document.getElementById("senderForm").submit();
 }

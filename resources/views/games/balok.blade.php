@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
+    <div class="back-button">
+        <a href="/games">
+            <h3>< back</h3>
+        </a>
+    </div>
     <div class="judul-game">
         <h1>TETRIS</h1>
     </div>
@@ -24,12 +29,16 @@
         <p>Level: <span id="level">0</span></p>
         <canvas id="next" class="next"></canvas>
         </div>
-        <button onclick="play()" class="play-button">Play</button>
+        <button onclick="play()" id='restartbtn' class="play-button">PLAY</button>
         <script src="{{ asset('js/balok/board.js') }}"></script>
         <script src="{{ asset('js/balok/constants.js') }}"></script>
         <script src="{{ asset('js/balok/main.js') }}"></script>
         <script src="{{ asset('js/balok/piece.js') }}"></script>
     </div>
     </div>
+    <form id="senderForm" method="post" action=" {{ route('submit.tetris') }} ">
+        @csrf
+        <input id="scoreSend" type="hidden" name="score" value=" ">
+    </form>
 </body>
 </html>

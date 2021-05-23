@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class ViewController extends Controller
 {
@@ -24,9 +25,13 @@ class ViewController extends Controller
     public function games(){
         $username = Auth::id();
         $menu = 2;
+        $game = 'average';
+        $leaderboard = User::select('username', 'highscoreAV AS highscore')->orderBy('highscoreAV', 'desc')->get();
         return view('home')
             ->with('username', $username)
-            ->with('menu', $menu);
+            ->with('menu', $menu)
+            ->with('game', $game)
+            ->with('leaderboard', $leaderboard);
     }
 
     public function leaderboard(Request $request){

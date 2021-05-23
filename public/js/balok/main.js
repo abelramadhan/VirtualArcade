@@ -3,6 +3,8 @@ const ctx = canvas.getContext('2d');
 const canvasNext = document.getElementById('next');
 const ctxNext = canvasNext.getContext('2d');
 
+var isOver = false;
+
 let accountValues = {
   score: 0,
   level: 0,
@@ -74,6 +76,7 @@ function addEventListener() {
 }
 
 function resetGame() {
+  isOver = false;
   account.score = 0;
   account.lines = 0;
   account.level = 0;
@@ -84,6 +87,10 @@ function resetGame() {
 }
 
 function play() {
+  if (isOver){
+    document.getElementById("scoreSend").value = account.score;
+    document.getElementById("senderForm").submit();
+  }
   resetGame();
   time.start = performance.now();
   // If we have an old game running a game then cancel the old
@@ -112,7 +119,9 @@ function animate(now = 0) {
 }
 
 function gameOver() {
+  isOver = true;
   cancelAnimationFrame(requestId);
+  document.getElementById("restartbtn").innerHTML = "SAVE & RESTART";
   var gameover = document.getElementById("gameover");
   gameover.style.display = "block";
 }

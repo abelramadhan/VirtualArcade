@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="back-button">
-        <a href="/home">
+        <a href="/games">
             <h3>< back</h3>
         </a>
     </div>
@@ -18,12 +18,12 @@
         <h1>SNEK</h1>
         <div id="score">0</div>
     </div>
-    <form id="senderForm" method="post" action=" {{ route('submit') }} ">
+    <form id="senderForm" method="post" action=" {{ route('submit.snek') }} ">
         @csrf
         <input id="scoreSend" type="hidden" name="score" value=" ">
     </form>
     <canvas id="canvas" width="400px" height="400px"></canvas>
-    <button id="restartbtn" onclick="location.reload()">RESTART</button>
+    <button id="restartbtn" onclick="submitScore()">SAVE & RESTART</button>
     <script src="{{ asset('js/snek.js') }}"></script>
 </body>
 </html>

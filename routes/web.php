@@ -43,4 +43,5 @@ Route::get('/register',[AuthController::class, 'showRegister']);
 
 Route::post('/register',[AuthController::class, 'validateForm'])->name('validate.user');
 
-Route::post('/tetris', [GameController::class, 'submitScore'])->name('submit');
+Route::post('/snek', [GameController::class, 'submitScoreSnek'])->name('submit.snek');
+Route::post('/tetris', [GameController::class, 'submitScoreTetris'])->name('submit.tetris');
