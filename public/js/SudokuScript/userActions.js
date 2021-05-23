@@ -42,53 +42,91 @@ function initActions() {
     let point = 0;
     
     function upgradePoint(){
-        if(boardSize = 4){
-            if (score >= 1000 && score < 3000){
-                point = 120
-            }else if(score >= 3000 && score < 5500){
-                point = 150
+        if(user__size  == 4){
+            if (user__level[0] == 0){
+                if (score >= 500){
+                    point = 120
+                }else if(score >= 1500){
+                    point = 150
+                }else{
+                    point = 100
+                }
+            }else if(user__level[0] == 1){
+                if(score >= 3500){
+                    point = 200
+                }if(score >= 5000){
+                    point = 220
+                }else{
+                    point = 180
+                }
             }else{
-                point = 100
+                if(score >= 7500){
+                    point = 250
+                }else if(score >= 9500){
+                    point = 280
+                }else if(score >= 11500){
+                    point = 300
+                }else{
+                    point = 220
+                }
             }
-        }else{
-            if (score >= 1000 && score < 3000){
-                point = 150
-            }else if(score >= 3000 && score < 5500){
-                point = 200
+        }else if (user__size == 9){
+            if (user__level[0] == 0){
+                if (score < 500){
+                    point = 150
+                }else if (score < 1500){
+                    point = 180
+                }else{
+                    point = 120
+                }
+            }else if (user__level[0] == 1){
+                if(score >= 3500){
+                    point = 200
+                }else if(score >= 5000){
+                    point = 220
+                }else{
+                    point = 180
+                }
             }else{
-                point = 120
+                if(score >= 7500){
+                    point = 280
+                }else if(score >= 9500){
+                    point = 300
+                }else if(score >= 11500){
+                    point = 320
+                }else{
+                    point = 250
+                }
             }
-        }        
+            
+        }       
     }
 
     function upgradeLevel(){
-        if(boardSize = 4){
-            if (score >= 1500 && score < 3000){
-                user__level = [level, 'Maybe']
-            }else if(score >= 3000 && score < 4500){
-                user__level = [level, 'Evil']
+        if(user__level[0] == 0){
+            if(score >= 2500){
+                user__level[0] = 1
             }else{
-                user__level = [level, 'Easy']
+                user__level[0] = 0
             }
-        }else{
-            if (score >= 1500 && score < 3000){
-                user__level = [level, 'Maybe']
-            }else if(score >= 3000 && score < 4500){
-                user__level = [level, 'Evil']
+        }else if (user__level[0] = 1){
+            if (score >= 6500){
+                user__level[0] = 2
             }else{
-                user__level = [level, 'Easy']
+                user__level[0] = 2
             }
-        }        
+        }
     }
+
     function submitHandler(event) {
         event.stopPropagation();
         let validater = new Validate(board.board, boardSize)
         let isValid = validater.runTests();
         if (isValid) {
+            upgradeLevel()
             upgradePoint()
             score = score+point
             alert("Selamat kamu berhasil menyelesaikan game. Score kamu sekarang "+ score + " poin!")
-            upgradeLevel()
             startHandler()
         } else {
             alert("Coba lagi ya, masih salah!")
