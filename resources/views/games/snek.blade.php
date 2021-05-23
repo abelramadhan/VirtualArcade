@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="back-button">
+        <a href="/home">
+            <h3>< back</h3>
+        </a>
+    </div>
     <div>
         <h1>SNEK</h1>
         <div id="score">0</div>
