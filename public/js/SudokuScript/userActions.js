@@ -86,9 +86,8 @@ function initActions() {
         let isValid = validater.runTests();
         if (isValid) {
             upgradePoint()
-            alert("Selamat kamu berhasil menyelesaikan game dengan level "+user__level+" Score bertambah "+ point +" poin!")
             score = score+point
-            alert("Score kamu sekarang "+ score + " poin!")
+            alert("Selamat kamu berhasil menyelesaikan game. Score kamu sekarang "+ score + " poin!")
             upgradeLevel()
             startHandler()
         } else {
