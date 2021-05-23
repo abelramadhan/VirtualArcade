@@ -73,7 +73,9 @@ class ViewController extends Controller
     }
     
     public function sudoku(){
-        return view('games.sudoku');
+        $username = Auth::id();
+        $currentHighscore = DB::table('tetris')->where('username', $username)->value('highscore');
+        return view('games.sudoku')->with('currentHighscore', $currentHighscore);
     }
 
     public function spaceInvader(){
@@ -86,9 +88,5 @@ class ViewController extends Controller
         $username = Auth::id();
         $currentHighscore = DB::table('sneks')->where('username', $username)->value('highscore');
         return view('games.snek')->with('currentHighscore', $currentHighscore);
-    }
-
-    public function pong(){
-        return view('games.pong');
     }
 }
