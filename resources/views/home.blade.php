@@ -99,11 +99,14 @@ use Illuminate\Support\Facades\Auth;
                 </div>
                 <div class="leaderboard-container">
                     <table>
+                        <thead>
                         <tr class="header-row">
                             <td>#</td>
                             <td>username</td>
                             <td>highscore</td>
                         </tr>
+                        </thead>
+                        <tbody>
                         @foreach ($leaderboard as $row)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
@@ -111,6 +114,7 @@ use Illuminate\Support\Facades\Auth;
                             <td class="highscore">{{ $row->highscore }}</td>
                         </tr>
                         @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

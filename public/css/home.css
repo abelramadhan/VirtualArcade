@@ -288,14 +288,14 @@ a:hover {
 .leaderboard-select {
     position: relative;
     left: 215px;
+    bottom: 10px;
 }
 
 .leaderboard-container table{
-    padding: 15px;
     width: 100%;
     height: 58vh;
     display: inline-block;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .leaderboard-container table::-webkit-scrollbar {
@@ -304,6 +304,10 @@ a:hover {
 
 .header-row td{
     border-bottom: 1px solid white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #1f1f1f;
 }
 
 td {
