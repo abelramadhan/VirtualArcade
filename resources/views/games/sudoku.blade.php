@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoku</title>
     <link rel="stylesheet" href="{{ asset('css/SudokuStyle/Style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/game.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
-
-<body class="flex-row">
-
+<body class="flex-col">
+    <div class="back-button">
+        <a href="/games">
+            <h3>< back</h3>
+        </a>
+    </div>
     <div id="main__container">
         <div id="header__controls" class="flex-row">
             <span id="header__menu"><img src="{{ asset('images/SudokuImage/option.png') }}" id="dotMenuSpan"></span>
@@ -52,6 +56,7 @@
     <div id="home">
         <div id="header">
             <div id="title">SUDOKU</div>
+            <div style="font-size: 15px; margin-top: 10px;" class="highscore">current highscore : {{ $currentHighscore }}</div>
 
             <div id="selection__size" class="selection flex-row">
                 <span class="title">Size</span>
@@ -77,10 +82,18 @@
                     <Span data-level=2>Evil</Span>
                 </div>
             </div>
-            <div id="start">Start</div>
+            <div onclick="showbtn()" id="start">Start</div>
         </div>
     </div>
 
+    <div onclick="submitScore()" class="save-btn">
+        <h1 id="save_exit">SAVE & EXIT</h1>
+    </div>
+
+    <form id="senderForm" method="post" action=" {{ route('submit.sudoku') }} ">
+        @csrf
+        <input id="scoreSend" type="hidden" name="score" value=" ">
+    </form>
 
     <script src="{{ asset('js/SudokuScript/global.js') }}"></script>
     <script src="{{ asset('js/SudokuScript/combinations.js') }}"></script>
@@ -91,6 +104,11 @@
     <script src="{{ asset('js/SudokuScript/userActions.js') }}"></script>
     <script src="{{ asset('js/SudokuScript/solver.js') }}"></script>
     <script src="{{ asset('js/SudokuScript/script.js') }}"></script>
+    <script>
+        function showbtn() {
+            document.getElementById("save_exit").style.display = "block";
+        }
+    </script>
 </body>
 
 </html>
