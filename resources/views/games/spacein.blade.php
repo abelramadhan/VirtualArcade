@@ -40,7 +40,7 @@
                 width: 800px;
                 margin-left: auto;
                 margin-right: auto;
-                margin-top: 10px
+                margin-top: 10px;
                 color: #ffffff;
                 font-family: "Courier New";
                 font-size: 12px;
