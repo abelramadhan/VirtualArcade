@@ -74,7 +74,7 @@ class ViewController extends Controller
     
     public function sudoku(){
         $username = Auth::id();
-        $currentHighscore = DB::table('sudoku')->where('username', $username)->value('highscore');
+        $currentHighscore = DB::table('sudokus')->where('username', $username)->value('highscore');
         return view('games.sudoku')->with('currentHighscore', $currentHighscore);
     }
 
