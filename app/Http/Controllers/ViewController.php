@@ -37,9 +37,8 @@ class ViewController extends Controller
     public function leaderboard(Request $request){
         $username = Auth::id();
         $menu = 3;
-        $game = $request->only('game-lead');
-        $game = $game['game-lead'];
-        $leaderboard = DB::table($game)->orderBy('highscore', 'desc')->get();
+        $game = 'average';
+        $leaderboard = User::select('username', 'highscoreAV AS highscore')->orderBy('highscoreAV', 'desc')->get();
         return view('home')
             ->with('username', $username)
             ->with('menu', $menu)
