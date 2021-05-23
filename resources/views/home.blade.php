@@ -67,9 +67,6 @@ use Illuminate\Support\Facades\Auth;
                 <a href="./tetris"><div class="game-container">
                     <h2>TETRIS</h2>
                 </div></a>
-                <a href="./pong"><div class="game-container">
-                    <h2>PONG</h2>
-                </div></a>
                 <a href="./spaceinvader"><div class="game-container">
                     <h2>SPACE INVADERS</h2>
                 </div></a>
