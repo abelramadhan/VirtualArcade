@@ -4,6 +4,7 @@ let emptyItems;
 let keyPadItems;
 let user__level = [level, 'Evil'];
 let user__size = boardSize;
+var score = 0;
 
 function initActions() {
 
@@ -39,7 +40,6 @@ function initActions() {
     }
     //Scoring after sumbit and refresh to the new game
     let point = 0;
-    let score = 0;
     
     function upgradePoint(){
         if(boardSize = 4){
@@ -220,3 +220,9 @@ function initActions() {
         dotMenuButton.addEventListener('click', (e) => dotMenuHandler(e))        
     }
 }
+
+function submitScore() {
+    document.getElementById("scoreSend").value = score;
+    document.getElementById("senderForm").submit();
+}
+

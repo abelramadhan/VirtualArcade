@@ -72,7 +72,9 @@ class ViewController extends Controller
     }
     
     public function sudoku(){
-        return view('games.sudoku');
+        $username = Auth::id();
+        $currentHighscore = DB::table('sudokus')->where('username', $username)->value('highscore');
+        return view('games.sudoku')->with('currentHighscore', $currentHighscore);
     }
 
     public function spaceInvader(){
