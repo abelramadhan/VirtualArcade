@@ -65,7 +65,9 @@ class ViewController extends Controller
     }
 
     public function spaceInvader(){
-        return view('games.spacein');
+        $username = Auth::id();
+        $currentHighscore = DB::table('space_invaders')->where('username', $username)->value('highscore');
+        return view('games.spacein')->with('currentHighscore', $currentHighscore);
     }
 
     public function snek(){

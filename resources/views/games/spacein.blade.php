@@ -29,8 +29,8 @@
                 width: 800px;
                 margin-left: auto;
                 margin-right: auto;
-                border: 1px solid white;
-                border-radius: 14px;
+                border: 3px solid white;
+                border-radius: 5px;
             }
             #gamecanvas { 
                 width: 800px;
@@ -40,9 +40,16 @@
                 width: 800px;
                 margin-left: auto;
                 margin-right: auto;
+                margin-top: 10px
                 color: #ffffff;
                 font-family: "Courier New";
+                font-size: 12px;
+                text-align: center
+            }
+
+            .highscore h3 {
                 font-size: 15px;
+                margin: 25px 0px 0px 0px
             }
         </style>
     </head>
@@ -53,9 +60,11 @@
             </a>
         </div>
         <div id="starfield"></div>
-        <br></br>
         <div id="gamecontainer">
         <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="highscore">
+            <h3>current highscore : {{ $currentHighscore }}</h3>
         </div>
         <div id="info">
             <p>Move with arrow keys, fire with the space bar. The invaders get faster and drop
