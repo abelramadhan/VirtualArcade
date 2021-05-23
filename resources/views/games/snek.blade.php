@@ -14,9 +14,10 @@
             <h3>< back</h3>
         </a>
     </div>
-    <div>
+    <div class="title">
         <h1>SNEK</h1>
         <div id="score">0</div>
+        <h3 class="highscore">current highscore : {{ $currentHighscore }}</h3>
     </div>
     <form id="senderForm" method="post" action=" {{ route('submit.snek') }} ">
         @csrf

@@ -16,6 +16,7 @@
     </div>
     <div class="judul-game">
         <h1>TETRIS</h1>
+        <h3 class="highscore">current highscore : {{ $currentHighscore }}</h3>
     </div>
     <div id="gameover" >
         <h1>GAME OVER</h1>

@@ -36,4 +36,8 @@ class GameController extends Controller
         
         return redirect()->back();
     }
+
+    public function updateAVGhighscore() {
+        
+    }
 }

@@ -15,6 +15,17 @@
 
 .judul-game{
     margin-bottom: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.judul-game h1 {
+    margin-bottom: 5px;
+}
+
+.highscore {
+    font-size: 11px;
+    margin-bottom: 20px;
 }
 
 .game-board {
