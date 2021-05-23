@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>Space Invaders</title>
-        <link rel="stylesheet" type="text/css" href="css/core.css">
-        <link rel="stylesheet" type="text/css" href="css/typeography.css">
-        <link rel="stylesheet" type="text/css" href="css/game.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/spacein/core.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/spacein/typeography.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/game.css') }}">
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <style>
     
