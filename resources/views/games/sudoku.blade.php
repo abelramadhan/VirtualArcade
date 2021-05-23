@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoku</title>
-    <link rel="stylesheet" href="{{ asset('css/SudokuStyle/Style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/SudokuStyle/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
@@ -80,7 +80,10 @@
             <div id="start">Start</div>
         </div>
     </div>
-
+    <form id="senderForm" method="post" action=" {{ route('submit.sudoku') }} ">
+        @csrf
+        <input id="scoreSend" type="hidden" name="score" value=" ">
+    </form>
 
     <script src="{{ asset('js/SudokuScript/global.js') }}"></script>
     <script src="{{ asset('js/SudokuScript/combinations.js') }}"></script>

@@ -19,14 +19,14 @@ use App\Http\Controllers\GameController;
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/home',[ViewController::class, 'home'])->name('home');
-    Route::get('/home/{menu}',[ViewController::class, 'homeMenu'])->name('home');
+    
     Route::get('/tetris',[ViewController::class, 'tetris'])->name('tetris');
     Route::get('/sudoku',[ViewController::class, 'sudoku'])->name('sudoku');
     Route::get('/pong',[ViewController::class, 'pong'])->name('pong');
     Route::get('/spaceinvader',[ViewController::class, 'spaceinvader'])->name('spaceinvader');
     Route::get('/snek',[ViewController::class, 'snek'])->name('snek');
     Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
-    // Route::get('leaderboard/logout',[LoginController::class, 'logout'])->name('logout');
+  
     Route::get('/leaderboard',[ViewController::class, 'leaderboard'])->name('get_leaderboard');
     Route::get('/games',[ViewController::class, 'games'])->name('games');
 });
@@ -46,3 +46,4 @@ Route::post('/register',[AuthController::class, 'validateForm'])->name('validate
 Route::post('/snek', [GameController::class, 'submitScoreSnek'])->name('submit.snek');
 Route::post('/tetris', [GameController::class, 'submitScoreTetris'])->name('submit.tetris');
 Route::post('/spaceinvader', [GameController::class, 'submitScoreSpacein'])->name('submit.spacein');
+Route::post('/sudoku', [GameController::class, 'submitScoreSudoku'])->name('submit.sudoku');
