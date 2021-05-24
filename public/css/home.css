@@ -311,7 +311,7 @@ a:hover {
 }
 
 td {
-    padding: 13px 30px;
+    padding: 10px 30px;
 }
 
 tr .highscore {
@@ -321,16 +321,35 @@ tr .highscore {
 .about{
     text-align: center;
     line-height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about p {
+    font-family: 'Open Sans';
+    line-height: 1.5;
+    width: 55%;
+    margin-bottom: 5px;
+    text-align: justify;
 }
 
 .developer{
     border: 0;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+.developer td {
+    padding: 0px 15px;
 }
 
 #dev-img{
-    width: 100px;
+    width: 50px;
 }
 .footer {
     width: 100%;

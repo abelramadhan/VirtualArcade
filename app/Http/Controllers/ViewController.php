@@ -65,6 +65,21 @@ class ViewController extends Controller
             ->with('leaderboard', $leaderboard);
     }
 
+    public function info(Request $request){
+        $username = Auth::id();
+        $menu = 4;
+        $game = $request->only('game-lead');
+        $game = 'average';
+        $leaderboard = User::select('username', 'highscoreAV AS highscore')
+                        ->where('highscoreAV', '!=', '0')
+                        ->orderBy('highscoreAV', 'desc')->get();   
+        return view('home')
+            ->with('username', $username)
+            ->with('menu', $menu)
+            ->with('game', $game)
+            ->with('leaderboard', $leaderboard);
+    }
+
     public function homeMenu($menu){
         $username = Auth::id();
         return view('home')

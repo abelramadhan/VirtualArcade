@@ -119,11 +119,11 @@ use Illuminate\Support\Facades\Auth;
         <div class="slide fade">
             <div class="about">
                 <h1>ABOUT</h1>
-                <p>Virtual Arcade merupakan suatu platform permainan klasik versi online.</p>
-                <p>Dimana terdapat beberapa permainan yang seru untuk dimainkan seperti Snek, Tetris, Space Invanders, dan Sudoku.</p>
+                <p>Virtual Arcade merupakan suatu platform permainan klasik versi online.
+                 Dimana terdapat beberapa permainan yang seru untuk dimainkan seperti Snek, Tetris, Space Invanders, dan Sudoku.</p>
                 <p>Selain bermain Anda juga dapat bersaing dengan teman-teman Anda yang lain dan jadi pemain dengan skor tertinggi.</p>
                 <br>
-                <h1>MEET OUR DEVELOPER</h1>
+                <h1>MEET OUR DEVELOPERS</h1>
                 <table class="developer">
                     <tr>
                         <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
