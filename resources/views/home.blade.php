@@ -119,8 +119,8 @@ use Illuminate\Support\Facades\Auth;
         <div class="slide fade">
             <div class="about">
                 <h1>ABOUT</h1>
-                <p>Virtual Arcade is one of the an online classic games platform,
-                 where there are many intriging games to play like Snek, Tetris, Space Invanders, dan Sudoku.</p>
+                <p>Virtual Arcade is an online classic games platform,
+                 where there are many intriguing games to play like Snek, Tetris, Space Invanders, and Sudoku.</p>
                 <p>Besides that, you can compete with others to reach the highest score on the leaderboard!</p>
                 <br>
                 <h1>MEET OUR DEVELOPERS</h1>
