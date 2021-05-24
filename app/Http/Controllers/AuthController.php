@@ -27,7 +27,7 @@ class AuthController extends Controller
         $request['password'] = bcrypt($request['password']);
 
         if ($occupied){
-            return back()->with('occupied', 'Username sudah terpakai');
+            return back()->with('occupied', 'Username is already used.');
         } else {
             User::create([
                 'username' => $request->username,
@@ -64,7 +64,7 @@ class AuthController extends Controller
     public function logAuth(Request $request){
         $correctUser = False;
         $approve = False;
-        if(User::where('username', '=', $request['username'])->exists()){
+        if(User::where('username', $request['username'])->exists()){
             $correctUser = True;
         }
 
@@ -73,7 +73,7 @@ class AuthController extends Controller
         } 
         
         if(!$correctUser){
-            return back()->with('falseUser', 'Username tidak terdaftar! Silahkan daftar.');
+            return back()->with('falseUser', 'Username not registered! Please register account.');
         }
 
         if ($approve) {

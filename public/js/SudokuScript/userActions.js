@@ -126,10 +126,10 @@ function initActions() {
             upgradeLevel()
             upgradePoint()
             score = score+point
-            alert("Yeay! Kamu berhasil menyelesiakan game. Skor kamu sekarang "+ score + " poin!")
+            alert("Yeay! You have finished the game. Your score is "+ score + " poin!")
             startHandler()
         } else {
-            alert("Coba lagi ya, masih ada yang salah!")
+            alert("Oops! Try again.")
         }
     }
 

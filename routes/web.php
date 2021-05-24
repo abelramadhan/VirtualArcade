@@ -22,28 +22,24 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/info',[ViewController::class, 'info'])->name('info');
     Route::get('/games/tetris',[ViewController::class, 'tetris'])->name('tetris');
     Route::get('/games/sudoku',[ViewController::class, 'sudoku'])->name('sudoku');
-    
     Route::get('/games/spaceinvader',[ViewController::class, 'spaceinvader'])->name('spaceinvader');
     Route::get('/games/snek',[ViewController::class, 'snek'])->name('snek');
     Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
     Route::get('/leaderboardAV',[ViewController::class, 'leaderboardAV'])->name('get_leaderboardAV');
     Route::get('/leaderboard',[ViewController::class, 'leaderboard'])->name('get_leaderboard');
     Route::get('/games',[ViewController::class, 'games'])->name('games');
+    
+    Route::post('/snek', [GameController::class, 'submitScoreSnek'])->name('submit.snek');
+    Route::post('/tetris', [GameController::class, 'submitScoreTetris'])->name('submit.tetris');
+    Route::post('/spaceinvader', [GameController::class, 'submitScoreSpacein'])->name('submit.spacein');
+    Route::post('/sudoku', [GameController::class, 'submitScoreSudoku'])->name('submit.sudoku');
 });
 
 Route::get('/', function(){
     return view('welcomeVA');
 });
 
-Route::get('/login',[LoginController::class, 'login'])->name('login');
-
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.user');
-
 Route::get('/register',[AuthController::class, 'showRegister']);
-
 Route::post('/register',[AuthController::class, 'validateForm'])->name('validate.user');
-
-Route::post('/snek', [GameController::class, 'submitScoreSnek'])->name('submit.snek');
-Route::post('/tetris', [GameController::class, 'submitScoreTetris'])->name('submit.tetris');
-Route::post('/spaceinvader', [GameController::class, 'submitScoreSpacein'])->name('submit.spacein');
-Route::post('/sudoku', [GameController::class, 'submitScoreSudoku'])->name('submit.sudoku');
+Route::get('/login',[LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.user');

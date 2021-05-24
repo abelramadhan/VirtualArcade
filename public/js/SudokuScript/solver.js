@@ -135,7 +135,7 @@ class Solver {
             //validate the board
             let isSolutionValid = this.boardValidation()
             if(isSolutionValid) console.log('Singles: solution is a valid sudoku');
-            alert('Yeay! Game sudah terselesaikan')
+            alert('Yeay! The game is finished!')
         }
         console.log(`Singles: ${this.solvedCount} filled out of ${this.questionsCount}`);
     }
@@ -231,7 +231,7 @@ class Solver {
         console.log('iteration done: ', iterations);
         if(this.boardValidation()){
             console.log('backTracking Complete: board Solved');
-            alert('Yeay! Game udah terselesaikan')
+            alert('Yeay! The game is finished!')
         }else{
             console.log('backTracking Complete: no solution found');
         }

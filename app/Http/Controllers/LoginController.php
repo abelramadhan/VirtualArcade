@@ -26,7 +26,7 @@ class LoginController extends Controller
             return redirect('home');
         }
         
-        return back()->with('wrong', 'Maaf, data yang anda masukkan salah.');
+        return back()->with('wrong', 'Sorry, wrong credentials.');
     }
 
     public function logout(){
