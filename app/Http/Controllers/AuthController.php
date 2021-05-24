@@ -73,7 +73,7 @@ class AuthController extends Controller
         } 
         
         if(!$correctUser){
-            return back()->with('falseUser', 'Username not registered! Please register account.');
+            return back()->with('falseUser', 'Username is not registered! Please register an account.');
         }
 
         if ($approve) {

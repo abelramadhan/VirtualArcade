@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -17,6 +18,15 @@ class LoginController extends Controller
             'username' => 'required|string',
             'password' => 'required',
         ]);
+
+        $correctUser = False;
+        if(User::where('username', $request['username'])->exists()){
+            $correctUser = True;
+        }
+        
+        if(!$correctUser){
+            return back()->with('falseUser', 'Username is not registered! Please register an account.');
+        }
 
         $credentials = $request->only('username', 'password');
 

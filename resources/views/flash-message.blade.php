@@ -18,6 +18,14 @@
     </tr>
 @endif
 
+@if ($message = Session::get('falseUser'))
+    <tr>
+        <td class="flash">
+            <strong>{{ $message }}</strong>
+        </td>
+    </tr>
+@endif
+
 @if ($errors->any())
     <tr>
         <td class="flash">

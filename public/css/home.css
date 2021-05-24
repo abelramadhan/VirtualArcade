@@ -332,7 +332,7 @@ tr .highscore {
     line-height: 1.5;
     width: 55%;
     margin-bottom: 5px;
-    text-align: justify;
+    
 }
 
 .developer{
@@ -349,8 +349,13 @@ tr .highscore {
 }
 
 #dev-img{
-    width: 50px;
+    width: 120px;
 }
+
+.role {
+    font-family: 'Open Sans';
+}
+
 .footer {
     width: 100%;
     display: flex;

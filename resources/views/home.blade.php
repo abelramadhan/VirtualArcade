@@ -119,27 +119,35 @@ use Illuminate\Support\Facades\Auth;
         <div class="slide fade">
             <div class="about">
                 <h1>ABOUT</h1>
-                <p>Virtual Arcade merupakan suatu platform permainan klasik versi online.
-                 Dimana terdapat beberapa permainan yang seru untuk dimainkan seperti Snek, Tetris, Space Invanders, dan Sudoku.</p>
-                <p>Selain bermain Anda juga dapat bersaing dengan teman-teman Anda yang lain dan jadi pemain dengan skor tertinggi.</p>
+                <p>Virtual Arcade is one of the an online classic games platform,
+                 where there are many intriging games to play like Snek, Tetris, Space Invanders, dan Sudoku.</p>
+                <p>Besides that, you can compete with others to reach the highest score on the leaderboard!</p>
                 <br>
                 <h1>MEET OUR DEVELOPERS</h1>
                 <table class="developer">
                     <tr>
-                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
-                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
-                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
-                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
-                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
-                        <td><img id="dev-img" src="{{ asset('images/icons/profile_icon.svg') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/about/abel.png') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/about/kemal.png') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/about/sela.png') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/about/kosa.png') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/about/endrew.png') }}" alt=""></td>
+                        <td><img id="dev-img" src="{{ asset('images/about/sehun.png') }}" alt=""></td>
                     </tr>
                     <tr>
-                        <td>Kemal</td>
                         <td>Abel</td>
+                        <td>Kemal</td>
                         <td>Sela</td>
                         <td>Kosa</td>
                         <td>Endro</td>
                         <td>Saihan</td>
+                    </tr>
+                    <tr>
+                        <td class="role">Full-stack</td>
+                        <td class="role">Backend</td>
+                        <td class="role">Frontend</td>
+                        <td class="role">Frontend</td>
+                        <td class="role">Frontend</td>
+                        <td class="role">Backend</td>
                     </tr>
                 </table>
 
