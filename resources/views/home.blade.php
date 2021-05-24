@@ -19,9 +19,9 @@ use Illuminate\Support\Facades\Auth;
         <a href="/home"><h2 class="logo">VIRTUAL<br>ARCADE</h2></a>
         <div class="nav-list">
             <span class="nav-item" onclick="currentSlide(1)"><img class="menu-icon" src="{{ asset('images/icons/home.svg') }}" alt="home"></span>
-            <span class="nav-item" onclick="currentSlide(2)"><img class="menu-icon" src="{{ asset('images/icons/game.svg') }}" alt="home"></span>
-            <span class="nav-item" onclick="currentSlide(3)"><img class="menu-icon" src="{{ asset('images/icons/leaderboard.svg') }}" alt="home"></span>
-            <span class="nav-item" onclick="currentSlide(4)"><img class="menu-icon" src="{{ asset('images/icons/info.svg') }}" alt="home"></span>
+            <span class="nav-item" onclick="currentSlide(2)"><img class="menu-icon" src="{{ asset('images/icons/game.svg') }}" alt="games"></span>
+            <span class="nav-item" onclick="currentSlide(3)"><img class="menu-icon" src="{{ asset('images/icons/leaderboard.svg') }}" alt="leaderboard"></span>
+            <span class="nav-item" onclick="currentSlide(4)"><img class="menu-icon" src="{{ asset('images/icons/info.svg') }}" alt="info"></span>
         </div>
         <div class="profile">
             <div   div class="user">
