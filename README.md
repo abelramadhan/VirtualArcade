@@ -4,6 +4,9 @@
 <p>untuk menjalankan aplikasi ini pada localhost, clone repo ini lalu start apache dan MySQL. setalah itu edit file env dan sesuaikan alamat dan nama server
 localhost. lalu pada teriminal jalankan perintah "php artisan serve"</p>
 
+<h3>Mobile App</h3>
+<a href="https://www.figma.com/proto/VyZnPJNTpXg3Ly6M3seV0R/Virtual-Arcade?node-id=3%3A2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=3%3A2">Mobile App Prototype</a>
+
 <h3>Screenshots</h3>
 <img src="https://user-images.githubusercontent.com/64635958/146761822-07b4f822-d001-4adc-ad1e-54942b751fc9.png" width="100%"></img>
 <img src="https://user-images.githubusercontent.com/64635958/146761851-b599c122-743f-4317-b344-82e80a11efb1.png" width="100%"></img>
